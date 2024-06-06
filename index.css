@@ -1,0 +1,41 @@
+
+
+#body{
+    display: flex;
+    margin:0;
+    padding: 0;
+  }
+  img{
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-touch-callout:none;
+    -moz-user-select:none;
+    user-select:none;
+  }
+  .awoken_skill{
+    width: 50px;
+  }
+  .palette{
+    width: 76vw;
+    margin: 0;
+    padding: 0 2vw 0 2vw;
+    background-color: white;
+  }
+  .canvas{
+    width: 20vw;
+    min-width: 100px;
+    position: sticky;
+    top: 0px;
+    height: 90vh;
+    text-align: center;
+  }
+  .canvas_box{
+    padding-top: 20px;
+    position: relative;
+  }
+  hr{
+    margin-bottom: 40px;
+  }
+  .transparent{
+    border: 1px black solid;
+  }

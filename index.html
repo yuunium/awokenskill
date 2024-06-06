@@ -15,47 +15,7 @@
     <meta property="og:locale" content="ja_JP" />
     <title>覚醒スキル性能作成補助ツール</title>
     
-    <style>
-      #body{
-        display: flex;
-        margin:0;
-        padding: 0;
-      }
-      img{
-        -webkit-touch-callout:none;
-        -webkit-user-select:none;
-        -moz-touch-callout:none;
-        -moz-user-select:none;
-        user-select:none;
-      }
-      .awoken_skill{
-        width: 50px;
-      }
-      .palette{
-        width: 76vw;
-        margin: 0;
-        padding: 0 2vw 0 2vw;
-        background-color: white;
-      }
-      .canvas{
-        width: 20vw;
-        min-width: 100px;
-        position: sticky;
-        top: 0px;
-        height: 90vh;
-        text-align: center;
-      }
-      .canvas_box{
-        padding-top: 20px;
-        position: relative;
-      }
-      hr{
-        margin-bottom: 40px;
-      }
-      .transparent{
-        border: 1px black solid;
-      }
-    </style>
+    <link rel="stylesheet" href="./index.css">
   </head>
 
 
@@ -256,21 +216,6 @@
     <p style="width: 0;" id="selected_box"></p>
 
   </body>
-  <script lang="js">
-    function box(a){
-      document.getElementById(a).src='./pic/selected.png';
-      document.getElementById('selected_box').innerHTML=a;
-    }
-    function set(a){
-      var in_box = document.getElementById('selected_box').innerHTML;
-      console.log(in_box);
-      document.getElementById(in_box).src='./pic/'+a+'.png';
-      document.getElementById('selected_box').innerHTML='';
-      in_box='';
-    };
-    function color(a){
-      document.getElementById('body').style.backgroundColor= a;
-    }
-  </script>
+  <script src="./script.js"></script>
 
 </html>
