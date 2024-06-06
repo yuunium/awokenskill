@@ -39,3 +39,7 @@
   .transparent{
     border: 1px black solid;
   }
+  .important{
+    color:red;
+    font-weight: bold;
+  }
