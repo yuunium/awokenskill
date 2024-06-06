@@ -4,8 +4,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="">
-    <title></title>
+    <meta name="description" content="覚醒スキル性能の作成を補助するツールです。">
+    <link rel="icon" href="./pic/favicon.png"type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="./pic/phone_favicon.png" />
+    
+    <meta property="og:url" content="ページのURL" />
+    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:image" content="画像のURL" />
+    <meta name="twitter:site" content="@Twitterユーザー名" />
+    <meta property="og:locale" content="ja_JP" />
+    <title>覚醒スキル性能作成補助ツール</title>
     
     <style>
       #body{
@@ -24,8 +32,9 @@
         width: 50px;
       }
       .palette{
-        width: 80vw;
-        padding: 0 0 0 2vw;
+        width: 76vw;
+        margin: 0;
+        padding: 0 2vw 0 2vw;
         background-color: white;
       }
       .canvas{
@@ -40,17 +49,38 @@
         padding-top: 20px;
         position: relative;
       }
+      hr{
+        margin-bottom: 40px;
+      }
+      .transparent{
+        border: 1px black solid;
+      }
     </style>
   </head>
 
 
-  <body id="body" id='body' style="background-color: black;" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
+  <body id="body" id='body' style="background-color: rgb(0, 0, 0);" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
 
     <div class="palette">
       <!--
       <img src="./pic/" class="awoken_skill" onclick="set('')">    
       -->
-
+      <div>
+        <p>使い方</p>
+        <ol>
+          <li>右縦一列の空白覚醒のうち、覚醒を配置したい位置の空白覚醒をクリック(タップ)</li>
+          <li>クリック(タップ)した空白覚醒が赤ふち覚醒にかわったことを確認し、任意の覚醒をクリック(タップ)</li>
+          <li>1.2.の繰り返し。</li>
+          <li>すべての空白覚醒を埋め終わったら、スクリーンショットなどで保存し、背景を透過塗りつぶしなどで消してご利用ください。</li>
+        </ol>
+        <ul>
+          <li>間違えてしまった場合は、その他から空白覚醒を選択するか、もう一度クリックして上書きしてください。</li>
+          <li>枠が9枠不必要な場合は、その他から透明の□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
+          <li>リロードすることでリセットが可能です。</li>
+          <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
+      </ul> 
+      </div>
+      <hr>
       <p>火力覚醒</p>
       <img src="./pic/7c.png" class="awoken_skill" onclick="set('7c')">
       <img src="./pic/7c_p.png" class="awoken_skill" onclick="set('7c_p')">
@@ -189,10 +219,28 @@
       <img src="./pic/space.png" class="awoken_skill" onclick="set('space')">
       <img src="./pic/space_p.png" class="awoken_skill" onclick="set('space_p')">
       <img src="./pic/syncro.png" class="awoken_skill" onclick="set('syncro')">
-
-      <input type="text" id="body_color"><button onclick="body_color">決定</button>
+      <img src="./pic/transparent.png" class="awoken_skill transparent" onclick="set('transparent')">
+      <br>
+      <hr>
+        <p>背景色設定</p>
+        <img src="./pic/color_black.png" class="awoken_skill" onclick="color('black')">
+        <img src="./pic/color_white.png" class="awoken_skill" onclick="color('white')">
+        <img src="./pic/color_green.png" class="awoken_skill" onclick="color('#00ff00')">
+        <img src="./pic/color_magenta.png" class="awoken_skill" onclick="color('magenta')">
+        <hr>
+        <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
+        <a href="https://x.com/yuunium">ゆうにうむ(@yuunium)</a>
+        <hr>
+        <p>高画質覚醒ダウンロードはこちら</p>
+        <a href="https://pad_awokenskill">高画質覚醒スキル(@pad_awokenskill)</a>
+        <hr>
+      <br><br><br>
     </div>
-
+    
+    
+    
+    
+    
     <div class="canvas">
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box1')" id="box1"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box2')" id="box2"><br>
@@ -203,8 +251,6 @@
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box7')" id="box7"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box8')" id="box8"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box9')" id="box9"><br>
-
-
     </div>
 
     <p style="width: 0;" id="selected_box"></p>
@@ -222,9 +268,8 @@
       document.getElementById('selected_box').innerHTML='';
       in_box='';
     };
-    function body_color(){
-      var color = document.getElementById('body_color').value;
-      document.getElementById('body').style.backgroundColor= color;
+    function color(a){
+      document.getElementById('body').style.backgroundColor= a;
     }
   </script>
 
