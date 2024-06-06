@@ -31,7 +31,6 @@
       }
       .canvas{
         width: 20vw;
-        max-width: 200px;
         min-width: 100px;
         position: sticky;
         top: 0px;
@@ -207,16 +206,21 @@
 
     </div>
 
+    <p style="width: 0;" id="selected_box"></p>
+
   </body>
   <script lang="js">
-    function set(a){
-      alert(a+'が押されました！')
-
-    };
     function box(a){
       document.getElementById(a).src='./pic/selected.png';
-      var now_slected = a;
+      document.getElementById('selected_box').innerHTML=a;
     }
+    function set(a){
+      var in_box = document.getElementById('selected_box').innerHTML;
+      console.log(in_box);
+      document.getElementById(in_box).src='./pic/'+a+'.png';
+      document.getElementById('selected_box').innerHTML='';
+      in_box='';
+    };
   </script>
 
 </html>
