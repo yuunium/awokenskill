@@ -12,7 +12,6 @@
         display: flex;
         margin:0;
         padding: 0;
-        background-color: rgb(255, 255, 255);
       }
       img{
         -webkit-touch-callout:none;
@@ -45,7 +44,7 @@
   </head>
 
 
-  <body id="body" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
+  <body id="body" id='body' style="background-color: black;" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
 
     <div class="palette">
       <!--
@@ -190,6 +189,8 @@
       <img src="./pic/space.png" class="awoken_skill" onclick="set('space')">
       <img src="./pic/space_p.png" class="awoken_skill" onclick="set('space_p')">
       <img src="./pic/syncro.png" class="awoken_skill" onclick="set('syncro')">
+
+      <input type="text" id="body_color"><button onclick="body_color">決定</button>
     </div>
 
     <div class="canvas">
@@ -221,6 +222,10 @@
       document.getElementById('selected_box').innerHTML='';
       in_box='';
     };
+    function body_color(){
+      var color = document.getElementById('body_color').value;
+      document.getElementById('body').style.backgroundColor= color;
+    }
   </script>
 
 </html>
