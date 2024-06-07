@@ -19,7 +19,7 @@ function color(a){
 function downloadPng() {
   const element =document.getElementById('canvas');
   const getImage = document.getElementById("getImage");
-  html2canvas(element,{backgroundColor: null,scale: 2}).then(canvas => {
+  html2canvas(element,{backgroundColor: null,scale: 2,height:800}).then(canvas => {
     getImage.setAttribute("href", canvas.toDataURL());
     getImage.setAttribute("download", "awokenskill.png");
     getImage.click();
