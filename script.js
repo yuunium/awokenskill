@@ -12,10 +12,6 @@ function set(a){
   in_box='';
 };
 
-function color(a){
-  document.getElementById('body').style.backgroundColor= a;
-}
-
 function downloadPng() {
   const element =document.getElementById('canvas');
   const getImage = document.getElementById("getImage");
