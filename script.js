@@ -19,5 +19,5 @@ function downloadPng() {
     getImage.setAttribute("href", canvas.toDataURL());
     getImage.setAttribute("download", "awokenskill.png");
     getImage.click();
-  });	
+  });
   };
