@@ -189,6 +189,9 @@
         <img src="./pic/color_white.png" class="awoken_skill" onclick="color('white')">
         <img src="./pic/color_green.png" class="awoken_skill" onclick="color('#00ff00')">
         <img src="./pic/color_magenta.png" class="awoken_skill" onclick="color('magenta')">
+
+        <button onclick="downloadPng()">ダウンロード</button>
+        <a style="display: none;" id="getImage" href=""></a>
         <hr>
         <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
         <a href="https://x.com/yuunium">ゆうにうむ(@yuunium)</a>
@@ -203,7 +206,7 @@
     
     
     
-    <div class="canvas">
+    <div id="canvas" class="canvas">
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box1')" id="box1"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box2')" id="box2"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box3')" id="box3"><br>
@@ -218,6 +221,7 @@
     <p style="width: 0;" id="selected_box"></p>
 
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="./script.js"></script>
 
 </html>
