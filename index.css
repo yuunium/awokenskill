@@ -34,7 +34,7 @@
     position: relative;
   }
   hr{
-    margin-bottom: 40px;
+    margin: 40px 0;
   }
   .transparent{
     border: 1px black solid;
@@ -42,4 +42,9 @@
   .important{
     color:red;
     font-weight: bold;
+  }
+  .btn{
+    width: 200px;
+    height: 100px;
+    font-size: 1.5rem;
   }
