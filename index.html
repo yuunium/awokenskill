@@ -31,17 +31,20 @@
           <li>右縦一列の空白覚醒のうち、覚醒を配置したい位置の空白覚醒をクリック(タップ)</li>
           <li>クリック(タップ)した空白覚醒が赤ふち覚醒にかわったことを確認し、任意の覚醒をクリック(タップ)</li>
           <li>1.2.の繰り返し。</li>
-          <li>すべての空白覚醒を埋め終わったら、スクリーンショットなどで保存し、背景を透過塗りつぶしなどで消してご利用ください。</li>
+          <li>すべての空白覚醒を埋め終わったら、ダウンロードボタンでダウンロードしてご利用ください。</li>
         </ol>
         <ul>
           <li>間違えてしまった場合は、その他から空白覚醒を選択するか、もう一度クリックして上書きしてください。</li>
           <li>枠が9枠不必要な場合は、その他から透明の□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
           <li>リロードすることでリセットが可能です。</li>
-          <li>また、ページ下背景色変更から、右側背景の調整が可能です。画像編集がし易い色に変更してください。イチオシは黒です。</li>
           <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
           <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
       </ul> 
       </div>
+      <hr>
+      <p>ダウンロードボタン(現在の覚醒画像が保存されます。)</p>
+      <button onclick="downloadPng()">ダウンロード</button>
+      <a style="display: none;" id="getImage" href=""></a>
       <hr>
       <p>火力覚醒</p>
       <img src="./pic/7c.png" class="awoken_skill" onclick="set('7c')">
@@ -189,9 +192,6 @@
         <img src="./pic/color_white.png" class="awoken_skill" onclick="color('white')">
         <img src="./pic/color_green.png" class="awoken_skill" onclick="color('#00ff00')">
         <img src="./pic/color_magenta.png" class="awoken_skill" onclick="color('magenta')">
-        <hr>
-        <button onclick="downloadPng()">ダウンロード(まだ利用できません)</button>
-        <a style="display: none;" id="getImage" href=""></a>
         <hr>
         <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
         <a href="https://x.com/yuunium">ゆうにうむ(@yuunium)</a>
