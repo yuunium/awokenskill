@@ -6,7 +6,6 @@ function box(a){
 
 function set(a){
   var in_box = document.getElementById('selected_box').innerHTML;
-  console.log(in_box);
   document.getElementById(in_box).src='./pic/'+a+'.png';
   document.getElementById('selected_box').innerHTML='';
   in_box='';
@@ -20,4 +19,31 @@ function downloadPng() {
     getImage.setAttribute("download", "awokenskill.png");
     getImage.click();
   });
+};
+
+function nomal(){
+  document.getElementById('super').style.display = "none";
+  for(let i = 1;i<10;i++){
+    var getbox = document.getElementById('box'+i);
+    getbox.src='./pic/space.png';
+    getbox.style.display = "";
   };
+};
+
+function super_skill(){
+  document.getElementById('box1').src = './pic/space.png';
+  document.getElementById('super').style.display = "";
+  for(let i = 2;i<10;i++){
+    var getbox = document.getElementById('box'+i);
+    getbox.style.display = "none";
+  };
+};
+
+function syncro(){
+  document.getElementById('box1').src = './pic/syncro.png';
+  document.getElementById('super').style.display = "none";
+  for(let i = 2;i<10;i++){
+    var getbox = document.getElementById('box'+i);
+    getbox.style.display = "none";
+  };
+};

@@ -43,16 +43,20 @@
           <li>すべての空白覚醒を埋め終わったら、ダウンロードボタンでダウンロードしてご利用ください。</li>
         </ol>
         <ul>
-          <li>間違えてしまった場合は、その他から空白覚醒を選択するか、もう一度クリックして上書きしてください。</li>
-          <li>枠が9枠不必要な場合は、その他から透明の□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
-          <li>リロードすることでリセットが可能です。</li>
+          <li>枠が9枠不要な場合は、その他から□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
+          <li>性能基礎設定欄の初期状態ボタンからリセットが可能です。各状態の切り替えも可能です。</li>
           <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
           <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
       </ul> 
       </div>
       <hr>
-      <p>ダウンロードボタン(現在の覚醒画像が保存されます。)</p>
-      <button class="btn" onclick="downloadPng()">ダウンロード</button>
+      <p>性能基礎設定</p>
+      <button onclick="nomal()">初期状態</button>
+      <button onclick="super_skill()">超覚醒のみ</button>
+      <button onclick="syncro()">シンクロ覚醒のみ</button>
+      <hr>
+      <p>ダウンロードボタン(現在の透過覚醒画像が保存されます。)</p>
+      <button class="dl_btn" onclick="downloadPng()">ダウンロード</button>
       <a style="display: none;" id="getImage" href=""></a>
       <hr>
       <p>火力覚醒</p>
@@ -217,6 +221,7 @@
     
     <div id="canvas" class="canvas">
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box1')" id="box1"><br>
+      <img src="./pic/super.png" class="awoken_skill" id="super" style="display: none;">
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box2')" id="box2"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box3')" id="box3"><br>
       <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box4')" id="box4"><br>
