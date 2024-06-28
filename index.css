@@ -4,6 +4,9 @@
     margin:0;
     padding: 0;
   }
+.bold{
+    font-weight:bold;
+}
   img{
     -webkit-touch-callout:none;
     -webkit-user-select:none;
