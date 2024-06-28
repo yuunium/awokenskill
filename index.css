@@ -15,14 +15,13 @@
     width: 50px;
   }
   .palette{
-    width: 76vw;
+    width: 80vw;
     margin: 0;
     padding: 0 2vw 0 2vw;
     background-color: white;
   }
   .canvas{
     width: 20vw;
-    min-width: 100px;
     position: sticky;
     top: 0px;
     height: 90vh;
