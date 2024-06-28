@@ -1,55 +1,84 @@
-
-#body{
-    display: flex;
-    margin:0;
-    padding: 0;
-  }
-.bold{
-    font-weight:bold;
+#body {
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
-  img{
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-    -moz-touch-callout:none;
-    -moz-user-select:none;
-    user-select:none;
-  }
-  .awoken_skill{
-    width: 50px;
-  }
-  .palette{
-    width: 80vw;
-    margin: 0;
-    padding: 0 2vw 0 2vw;
-    background-color: white;
-  }
-  .canvas{
-    width: 20vw;
-    position: sticky;
-    top: 0px;
-    height: 90vh;
-    text-align: center;
-  }
-  .canvas_box{
-    padding-top: 20px;
-    position: relative;
-  }
-  hr{
-    margin: 40px 0;
-  }
-  .transparent{
-    border: 1px black solid;
-  }
-  .important{
-    color:red;
-    font-weight: bold;
-  }
-  .dl_btn{
-    width: 200px;
-    height: 70px;
-    font-size: 1.5rem;
-  }
-  #super{
-    position: relative;
-    top: -15px;
-  }
+
+h1 {
+  position: relative;
+  padding: 1.5rem 1rem;
+}
+
+h1:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  content: '';
+  background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+  background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+  background-size: 7px 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-touch-callout: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.awoken_skill {
+  width: 50px;
+}
+
+.palette {
+  width: 80vw;
+  margin: 0;
+  padding: 0 2vw 0 2vw;
+  background-color: white;
+}
+
+.canvas {
+  width: 20vw;
+  position: sticky;
+  top: 0px;
+  height: 90vh;
+  text-align: center;
+}
+
+.canvas_box {
+  padding-top: 20px;
+  position: relative;
+}
+
+hr.space {
+  margin: 40px 0;
+}
+
+.transparent {
+  border: 1px black solid;
+}
+
+.important {
+  color: red;
+  font-weight: bold;
+}
+
+.dl_btn {
+  width: 200px;
+  height: 70px;
+  font-size: 1.5rem;
+}
+
+#super {
+  position: relative;
+  top: -15px;
+}
