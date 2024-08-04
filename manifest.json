@@ -1,6 +1,6 @@
 {
-    "name": "PWA Sample",
-    "short_name": "PWA",
+    "name": "yuunium",
+    "short_name": "高画質覚醒補助ツール",
     "icons": [{
         "src": "./pic/phone_favicon.png",
         "sizes": "200x200",

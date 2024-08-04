@@ -47,3 +47,9 @@ function syncro(){
     getbox.style.display = "none";
   };
 };
+
+
+if (registration.installing.state === "installed") {
+
+
+}
