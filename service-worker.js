@@ -1,6 +1,6 @@
 var CACHE_NAME  = "fb-cache-v8-10";
 
-var urlstocache =[
+var urlsToCache =[
 "./pic/7c.png",
 "./pic/7c_p.png",
 "./pic/7c3.png",
