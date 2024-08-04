@@ -24,6 +24,10 @@ h1:after {
   backface-visibility: hidden;
 }
 
+#lastupdate{
+  font-size: 0.5rem;
+}
+
 .bold {
   font-weight: bold;
 }
