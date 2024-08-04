@@ -239,3 +239,33 @@ self.addEventListener('activate', event => {
       );
     }
   });
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("service-worker.js", {
+        scope: "./",
+      })
+      .then((registration) => {
+        let serviceWorker;
+        if (registration.installing) {
+          
+        } else if (registration.waiting) {
+            skipWaiting()
+        } else if (registration.active) {
+          
+        }
+        if (serviceWorker) {
+          // logState(serviceWorker.state);
+          serviceWorker.addEventListener("statechange", (e) => {
+            // logState(e.target.state);
+          });
+        }
+      })
+      .catch((error) => {
+        // 登録時に何か問題が発生した。service-worker.js ファイルが利用できないか、
+        // 構文エラーが含まれている可能性がある。
+      });
+  } else {
+    // 現在のブラウザーはサービスワーカーに対応していない。
+    // おそらく、古すぎるか、安全なコンテキストにない。
+  }
