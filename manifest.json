@@ -1,0 +1,11 @@
+{
+    "name": "PWA Sample",
+    "short_name": "PWA",
+    "icons": [{
+        "src": "./pic/phone_favicon.png",
+        "sizes": "200x200",
+        "type": "image/png"
+      }],
+    "start_url": "./?utm_source=homescreen",
+    "display": "standalone"
+  }
