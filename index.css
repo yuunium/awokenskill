@@ -49,6 +49,11 @@ img {
   background-color: white;
 }
 
+.InnerPalette{
+  margin: 0;
+  padding: 0;
+}
+
 .canvas {
   width: 20vw;
   position: sticky;
@@ -88,3 +93,4 @@ hr.space {
 
 displayImage{
   height: 60vh;
+}
