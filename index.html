@@ -40,31 +40,37 @@
       <img src="./pic/" class="awoken_skill" onclick="set('')">    
       -->
       <h1>覚醒スキル性能作成補助ツール</h1>
-      <p id="lastupdate">最終更新:2024/08/03/12:50</p>
+      <p id="lastupdate">最終更新:2024/08/13/14:50</p>
       <div>
-        <p>使い方</p>
-        <ol>
-          <li>右縦一列の空白覚醒のうち、覚醒を配置したい位置の空白覚醒をクリック</li>
-          <li>クリックした空白覚醒が赤ふち覚醒にかわったことを確認し、任意の覚醒をクリック</li>
-          <li>1.2.の繰り返し。</li>
-          <li>すべての空白覚醒を埋め終わったら、ダウンロードボタンでダウンロードしてご利用ください。</li>
-        </ol>
+        <details>
+          <summary class="bold">使い方</summary>
+          <ol>
+            <li>右縦一列の空白覚醒のうち、覚醒を配置したい位置の空白覚醒をクリック</li>
+            <li>クリックした空白覚醒が赤ふち覚醒にかわったことを確認し、任意の覚醒をクリック</li>
+            <li>1.2.の繰り返し。</li>
+            <li>すべての空白覚醒を埋め終わったら、ダウンロードボタンでダウンロードしてご利用ください。</li>
+          </ol>
+          <ul>
+            <li class="bold">枠が9枠不要な場合は、その他から□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
+            <li>性能基礎設定欄の初期状態ボタン及びリロードでリセットが可能です。各状態の切り替えも可能です。</li>
+          </ul>
+        </details>
         <ul>
-          <li class="bold">枠が9枠不要な場合は、その他から□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
-          <li>性能基礎設定欄の初期状態ボタンからリセットが可能です。各状態の切り替えも可能です。</li>
           <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
           <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
       </ul> 
       </div>
       <hr class="space">
-      <p>性能基礎設定</p>
+      <p>性能設定</p>
       <button onclick="nomal()">初期状態</button>
       <button onclick="super_skill()">超覚醒のみ</button>
       <button onclick="syncro()">シンクロ覚醒のみ</button>
       <hr class="space">
       <p>ダウンロードボタン(現在の透過覚醒画像が保存されます。)</p>
-      <button class="dl_btn" onclick="downloadPng()">ダウンロード</button>
-      <a style="display: none;" id="getImage" href=""></a>
+      <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
+      <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
+      <a style="display: none;" id="downloadImage" href=""></a>
+      <img style="display: none;" id="displayImage"></img>
       <hr class="space">
       <p>パズル系火力覚醒</p>
       <img src="./pic/7c.png" class="awoken_skill" onclick="set('7c')">
