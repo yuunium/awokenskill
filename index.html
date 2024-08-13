@@ -61,17 +61,20 @@
       </ul> 
       </div>
       <hr class="space">
-      <p>性能設定</p>
-      <button onclick="nomal()">初期状態</button>
-      <button onclick="super_skill()">超覚醒のみ</button>
-      <button onclick="syncro()">シンクロ覚醒のみ</button>
-      <hr class="space">
-      <p>ダウンロードボタン(現在の透過覚醒画像が保存されます。)</p>
-      <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
-      <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
-      <a style="display: none;" id="downloadImage" href=""></a>
-      <img style="display: none;" id="displayImage"></img>
-      <hr class="space">
+      <details>
+        <summary class="bold">各種設定、ダウンロード</summary>
+        <br>
+        <button onclick="nomal()">初期状態</button>
+        <button onclick="super_skill()">超覚醒のみ</button>
+        <button onclick="syncro()">シンクロ覚醒のみ</button>
+        <hr class="space">
+        <p>ダウンロードボタン</p>
+        <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
+        <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
+        <a style="display: none;" id="downloadImage" href=""></a>
+        <img style="display: none;" id="displayImage"></img>
+      </details>
+       <hr class="space">
       <div class="InnerPalette" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
         
         <p>パズル系火力覚醒</p>
