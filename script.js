@@ -1,14 +1,27 @@
+var selected_box = "";
 function box(a) {
   document.getElementById(a).src = './pic/selected.png';
-  document.getElementById('selected_box').innerHTML = a;
+  selected_box = a;
 };
 
+var set_count = 0;
 function set(a) {
-  var in_box = document.getElementById('selected_box').innerHTML;
-  document.getElementById(in_box).src = './pic/' + a + '.png';
-  document.getElementById('selected_box').innerHTML = '';
-};
+  document.getElementById(selected_box).src = './pic/' + a + '.png';
 
+  let url = document.getElementById("url");
+  let parameter_number = selected_box.charAt(selected_box.length - 1);
+  if(set_count>0) {
+    let new_url = url + "&" + parameter_number + "=" + a;
+    url.href = new_url;
+    url.innerHTML = new_url;
+  }else{
+    let new_url = url + parameter_number + "=" + a;
+    url.href = new_url;
+    url.innerHTML = new_url;
+  }
+  selected_box = "";
+  set_count = set_count+1;
+};
 function downloadPngFile() {
   const element = document.getElementById('canvas');
   const getImage = document.getElementById("downloadImage");
@@ -81,16 +94,14 @@ function odd(array) {
 }
 
 var params = location.href.split("?");
-console.log(params);
 if (params.length > 1) {
   let X = params[1].split(/&|=/);
-  console.log(X);
   let Y = even(X);
   let Z = odd(X);
   let length = Y.length;
 
   for (let i = 0; i < length; i++) {
-    document.getElementById('selected_box').innerHTML = "box" + String(Number(Y[i]));
+    selected_box = "box" + String(Number(Y[i]));
     set(Z[i]);
   }
 }
