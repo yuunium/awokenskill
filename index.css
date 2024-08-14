@@ -91,6 +91,11 @@ hr.space {
   top: -15px;
 }
 
+summary{
+  padding:10px;
+  background-color:#d1f2ff;
+}
+
 #displayImage{
   height: 60vh;
   margin-top: 20px;
