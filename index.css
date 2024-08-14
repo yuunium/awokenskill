@@ -102,3 +102,7 @@ summary{
   margin-left: 10vw;
   border: 1px solid; 
 }
+
+a {
+  word-wrap:break-word;
+}
