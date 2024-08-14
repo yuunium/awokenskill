@@ -62,7 +62,8 @@
       </div>
       <hr class="space">
       <details open>
-        <summary class="bold">各種設定、ダウンロード、共有用URL</summary>
+        <summary class="bold">各種設定、ダウンロード、共有用URL、
+        </summary>
         <br>
         <button onclick="nomal()">初期状態</button>
         <button onclick="super_skill()">超覚醒のみ</button>
@@ -71,11 +72,13 @@
         <p>ダウンロードボタン</p>
         <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
         <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
-        <hr class="space">
-        <p>共有用URL</p>
-        <a id="url" href="https://yuunium.github.io/awokenskill/?">https://yuunium.github.io/awokenskill/?</a>
         <a style="display: none;" id="downloadImage" href=""></a>
         <img style="display: none;" id="displayImage"></img>
+        <hr class="space">
+        <p>共有用URL</p>
+        <button onclick="copy()">URLコピー</button>
+        <button onclick="url_reset()">URLリセット</button><br>
+        <a id="url" href="https://yuunium.github.io/awokenskill/?">https://yuunium.github.io/awokenskill/?</a>
       </details>
        <hr class="space">
       <div class="InnerPalette" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">

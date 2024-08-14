@@ -5,19 +5,22 @@ function box(a) {
 };
 
 var set_count = 0;
+let now_url= "";
+let url = document.getElementById("url");
 function set(a) {
   document.getElementById(selected_box).src = './pic/' + a + '.png';
 
-  let url = document.getElementById("url");
   let parameter_number = selected_box.charAt(selected_box.length - 1);
   if(set_count>0) {
     let new_url = url + "&" + parameter_number + "=" + a;
     url.href = new_url;
     url.innerHTML = new_url;
+    now_url = new_url;
   }else{
     let new_url = url + parameter_number + "=" + a;
     url.href = new_url;
     url.innerHTML = new_url;
+    now_url = new_url;
   }
   selected_box = "";
   set_count = set_count+1;
@@ -41,6 +44,15 @@ function downloadPngDisplay() {
   });
   getImage.style.display = "block";
 };
+
+function copy(){
+  navigator.clipboard.writeText(now_url);
+}
+
+function url_reset(){
+  url.href = "https://yuunium.github.io/awokenskill/?"
+  url.innerHTML = "https://yuunium.github.io/awokenskill/?";
+}
 
 function nomal() {
   document.getElementById('super').style.display = "none";
