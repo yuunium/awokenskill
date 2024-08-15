@@ -1,273 +1,281 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="覚醒スキル性能の作成を補助するツールです。">
-    <link rel="icon" href="./pic/favicon.png"type="image/png" />
-    <link rel="apple-touch-icon-precomposed" href="./pic/phone_favicon.png" />
-    
-    <meta property="og:url" content="https://yuunium.github.io/awokenskill/" />
-    <meta property="og:title" content="覚醒スキル性能作成補助ツール" />
-    <meta property="og:image" content="./pic/syncro.png" />
-    <meta name="twitter:site" content="@yuunium" />
-    <meta property="og:locale" content="ja_JP" />
-    <title>覚醒スキル性能作成補助ツール</title>
-    <link rel="stylesheet" href="./index.css">
-    <meta name="google-site-verification" content="uYTZ9NDQtdJb_7LJUEevyXIja9OnZ9ePBcKoPQdbKhY" />
-  </head>
-  <!-- Google tag (gtag.js) -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="description" content="覚醒スキル性能の作成を補助するツールです。">
+  <link rel="icon" href="./pic/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon-precomposed" href="./pic/phone_favicon.png" />
+
+  <meta property="og:url" content="https://yuunium.github.io/awokenskill/" />
+  <meta property="og:title" content="覚醒スキル性能作成補助ツール" />
+  <meta property="og:image" content="./pic/syncro.png" />
+  <meta name="twitter:site" content="@yuunium" />
+  <meta property="og:locale" content="ja_JP" />
+  <title>覚醒スキル性能作成補助ツール</title>
+  <link rel="stylesheet" href="./index.css">
+  <meta name="google-site-verification" content="uYTZ9NDQtdJb_7LJUEevyXIja9OnZ9ePBcKoPQdbKhY" />
+</head>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W98DNPPVTJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-W98DNPPVTJ');
 
-  
+
   if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js').then(function() { console.log('Service Worker Registered'); });
-   }
+    navigator.serviceWorker.register('./service-worker.js').then(function () { console.log('Service Worker Registered'); });
+  }
 </script>
 
 
-  <body id="body">
+<body id="body">
 
-    <div class="palette">
-      <!--
-      <img src="./pic/" class="awoken_skill" onclick="set('')">    
-      -->
-      <h1>覚醒スキル性能作成補助ツール</h1>
-      <p id="lastupdate">最終更新:2024/08/14/13:00</p>
-      <div>
-        <details>
-          <summary class="bold">使い方</summary>
-          <ol>
-            <li>右縦一列の空白覚醒のうち、覚醒を配置したい位置の空白覚醒をクリック</li>
-            <li>クリックした空白覚醒が赤ふち覚醒にかわったことを確認し、任意の覚醒をクリック</li>
-            <li>1.2.の繰り返し。</li>
-            <li>すべての空白覚醒を埋め終わったら、ダウンロードボタンでダウンロードしてご利用ください。</li>
-          </ol>
-          <ul>
-            <li class="bold">枠が9枠不要な場合は、その他から□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
-            <li>性能基礎設定欄の初期状態ボタン及びリロードでリセットが可能です。各状態の切り替えも可能です。</li>
-          </ul>
-        </details>
-        <ul>
-          <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
-          <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
-      </ul> 
-      </div>
-      <hr class="space">
+  <div class="palette">
+
+    <h1>覚醒スキル性能作成補助ツール</h1>
+    <p id="lastupdate">最終更新:2024/08/14/13:00</p>
+    <div>
       <details>
-        <summary class="bold">各種設定、ダウンロード、共有用URL、
-        </summary>
-        <br>
-        <button onclick="nomal()">初期状態</button>
-        <button onclick="super_skill()">超覚醒のみ</button>
-        <button onclick="syncro()">シンクロ覚醒のみ</button>
-        <hr class="space">
-        <p>ダウンロードボタン</p>
-        <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
-        <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
-        <a style="display: none;" id="downloadImage" href=""></a>
-        <img style="display: none;" id="displayImage"></img>
-        <hr class="space">
-        <p>共有用URL</p>
-        <button onclick="copy()">URLコピー</button>
-        <button onclick="url_reset()">URLリセット</button><br>
-        <a id="url" href="https://yuunium.github.io/awokenskill/?">https://yuunium.github.io/awokenskill/?</a>
+        <summary class="bold">使い方</summary>
+        <ol>
+          <li>右縦一列の空白覚醒のうち、覚醒を配置したい位置の空白覚醒をクリック</li>
+          <li>クリックした空白覚醒が赤ふち覚醒にかわったことを確認し、任意の覚醒をクリック</li>
+          <li>1.2.の繰り返し。</li>
+          <li>すべての空白覚醒を埋め終わったら、ダウンロードボタンでダウンロードしてご利用ください。</li>
+        </ol>
+        <ul>
+          <li class="bold">枠が9枠不要な場合は、その他から□を選択すると消す事ができます。再度覚醒があった位置をクリックすると覚醒が復活します。</li>
+          <li>性能基礎設定欄の初期状態ボタン及びリロードでリセットが可能です。各状態の切り替えも可能です。</li>
+        </ul>
       </details>
-       <hr class="space">
-      <div class="InnerPalette" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
-        
-        <p>パズル系火力覚醒</p>
-        <img src="./pic/7c.png" class="awoken_skill" onclick="set('7c')">
-        <img src="./pic/7c_p.png" class="awoken_skill" onclick="set('7c_p')">
-        <img src="./pic/7c3.png" class="awoken_skill" onclick="set('7c3')">
-        <img src="./pic/7c4.png" class="awoken_skill" onclick="set('7c4')">
-        <img src="./pic/7c10.png" class="awoken_skill" onclick="set('7c10')">
-        <img src="./pic/10c.png" class="awoken_skill" onclick="set('10c')">
-        <img src="./pic/10c_p.png" class="awoken_skill" onclick="set('10c_p')">
-        <img src="./pic/void.png" class="awoken_skill" onclick="set('void')">
-        <img src="./pic/void_p.png" class="awoken_skill" onclick="set('void_p')">
-        <img src="./pic/levitate.png" class="awoken_skill" onclick="set('levitate')">
-        <img src="./pic/way.png" class="awoken_skill" onclick="set('way')">
-        <img src="./pic/way_p.png" class="awoken_skill" onclick="set('way_p')">
-        <img src="./pic/3color.png" class="awoken_skill" onclick="set('3color')">
-        <img src="./pic/3color_p.png" class="awoken_skill" onclick="set('3color_p')">
-        <img src="./pic/4color.png" class="awoken_skill" onclick="set('4color')">
-        <img src="./pic/4color_p.png" class="awoken_skill" onclick="set('4color_p')">
-        <img src="./pic/5color.png" class="awoken_skill" onclick="set('5color')">
-        <img src="./pic/5color_p.png" class="awoken_skill" onclick="set('5color_p')">
-        <img src="./pic/l.png" class="awoken_skill" onclick="set('l')">
-        <img src="./pic/l_p.png" class="awoken_skill" onclick="set('l_p')">
-        <img src="./pic/cross.png" class="awoken_skill" onclick="set('cross')">
-        <img src="./pic/cross_p.png" class="awoken_skill" onclick="set('cross_p')">
-        <img src="./pic/t.png" class="awoken_skill" onclick="set('t')">
-        <img src="./pic/t_p.png" class="awoken_skill" onclick="set('t_p')">
-        <img src="./pic/many.png" class="awoken_skill" onclick="set('many')">
-        <img src="./pic/many_p.png" class="awoken_skill" onclick="set('many_p')">
-        <img src="./pic/guardbreak.png" class="awoken_skill" onclick="set('guardbreak')">
-        <img src="./pic/rcvl.png" class="awoken_skill" onclick="set('rcvl')">
-        <img src="./pic/bonusatt.png" class="awoken_skill" onclick="set('bonusatt')">
-        <img src="./pic/bonusatt_p.png" class="awoken_skill" onclick="set('bonusatt_p')">
-        <img src="./pic/50more.png" class="awoken_skill" onclick="set('50more')">
-        <img src="./pic/50less.png" class="awoken_skill" onclick="set('50less')">
-        <p>各色火力覚醒</p>
-        <img src="./pic/row_fire.png" class="awoken_skill" onclick="set('row_fire')">
-        <img src="./pic/row_water.png" class="awoken_skill" onclick="set('row_water')">
-        <img src="./pic/row_wood.png" class="awoken_skill" onclick="set('row_wood')">
-        <img src="./pic/row_light.png" class="awoken_skill" onclick="set('row_light')">
-        <img src="./pic/row_dark.png" class="awoken_skill" onclick="set('row_dark')">
-        <img src="./pic/row3_fire.png" class="awoken_skill" onclick="set('row3_fire')">
-        <img src="./pic/row3_water.png" class="awoken_skill" onclick="set('row3_water')">
-        <img src="./pic/row3_wood.png" class="awoken_skill" onclick="set('row3_wood')">
-        <img src="./pic/row3_light.png" class="awoken_skill" onclick="set('row3_light')">
-        <img src="./pic/row3_dark.png" class="awoken_skill" onclick="set('row3_dark')">
-        <img src="./pic/combo_fire.png" class="awoken_skill" onclick="set('combo_fire')">
-        <img src="./pic/combo_water.png" class="awoken_skill" onclick="set('combo_water')">
-        <img src="./pic/combo_wood.png" class="awoken_skill" onclick="set('combo_wood')">
-        <img src="./pic/combo_light.png" class="awoken_skill" onclick="set('combo_light')">
-        <img src="./pic/combo_dark.png" class="awoken_skill" onclick="set('combo_dark')">
-        <img src="./pic/combo_fire_p.png" class="awoken_skill" onclick="set('combo_fire_p')">
-        <img src="./pic/combo_water_p.png" class="awoken_skill" onclick="set('combo_water_p')">
-        <img src="./pic/combo_wood_p.png" class="awoken_skill" onclick="set('combo_wood_p')">
-        <img src="./pic/combo_light_p.png" class="awoken_skill" onclick="set('combo_light_p')">
-        <img src="./pic/combo_dark_p.png" class="awoken_skill" onclick="set('combo_dark_p')">
-        <p>ステータス上昇覚醒</p>
-        <img src="./pic/taru.png" class="awoken_skill" onclick="set('taru')">
-        <img src="./pic/in.png" class="awoken_skill" onclick="set('in')">
-        <img src="./pic/yo.png" class="awoken_skill" onclick="set('yo')">
-        <img src="./pic/all.png" class="awoken_skill" onclick="set('all')">
-        <img src="./pic/all_p.png" class="awoken_skill" onclick="set('all_p')">
-        <img src="./pic/voice.png" class="awoken_skill" onclick="set('voice')">
-        <img src="./pic/hp.png" class="awoken_skill" onclick="set('hp')">
-        <img src="./pic/hp_p.png" class="awoken_skill" onclick="set('hp_p')">
-        <img src="./pic/hp_m.png" class="awoken_skill" onclick="set('hp_m')">
-        <img src="./pic/team_hp.png" class="awoken_skill" onclick="set('team_hp')">
-        <img src="./pic/team_hp_p.png" class="awoken_skill" onclick="set('team_hp_p')">
-        <img src="./pic/team_hp_m.png" class="awoken_skill" onclick="set('team_hp_m')">
-        <img src="./pic/rcv.png" class="awoken_skill" onclick="set('rcv')">
-        <img src="./pic/rcv_p.png" class="awoken_skill" onclick="set('rcv_p')">
-        <img src="./pic/rcv_m.png" class="awoken_skill" onclick="set('rcv_m')">
-        <img src="./pic/team_rcv.png" class="awoken_skill" onclick="set('team_rcv')">
-        <img src="./pic/team_rcv_p.png" class="awoken_skill" onclick="set('team_rcv_p')">
-        <img src="./pic/team_rcv_m.png" class="awoken_skill" onclick="set('team_rcv_m')">
-        <img src="./pic/att.png" class="awoken_skill" onclick="set('att')">
-        <img src="./pic/att_p.png" class="awoken_skill" onclick="set('att_p')">
-        <img src="./pic/att_m.png" class="awoken_skill" onclick="set('att_m')">
-        <img src="./pic/multi.png" class="awoken_skill" onclick="set('multi')">
-        <img src="./pic/multi_p.png" class="awoken_skill" onclick="set('multi_p')">
-        <p>補助効果覚醒</p>
-        <img src="./pic/assist.png" class="awoken_skill" onclick="set('assist')">
-        <img src="./pic/boost.png" class="awoken_skill" onclick="set('boost')">
-        <img src="./pic/boost_p.png" class="awoken_skill" onclick="set('boost_p')">
-        <img src="./pic/bind.png" class="awoken_skill" onclick="set('bind')">
-        <img src="./pic/bind_p.png" class="awoken_skill" onclick="set('bind_p')">
-        <img src="./pic/huin.png" class="awoken_skill" onclick="set('huin')">
-        <img src="./pic/huin_p.png" class="awoken_skill" onclick="set('huin_p')">
-        <img src="./pic/charge.png" class="awoken_skill" onclick="set('charge')">
-        <img src="./pic/charge_p.png" class="awoken_skill" onclick="set('charge_p')">
-        <img src="./pic/time.png" class="awoken_skill" onclick="set('time')">
-        <img src="./pic/time_p.png" class="awoken_skill" onclick="set('time_p')">
-        <img src="./pic/time_m.png" class="awoken_skill" onclick="set('time_m')">
-        <img src="./pic/autorcv.png" class="awoken_skill" onclick="set('autorcv')">
-        <img src="./pic/autorcv_p.png" class="awoken_skill" onclick="set('autorcv_p')">
-        <img src="./pic/bindrcv.png" class="awoken_skill" onclick="set('bindrcv')">
-        <img src="./pic/bindrcv_p.png" class="awoken_skill" onclick="set('bindrcv_p')">
-        <img src="./pic/sub_fire.png" class="awoken_skill" onclick="set('sub_fire')">
-        <img src="./pic/sub_water.png" class="awoken_skill" onclick="set('sub_water')">
-        <img src="./pic/sub_wood.png" class="awoken_skill" onclick="set('sub_wood')">
-        <img src="./pic/sub_light.png" class="awoken_skill" onclick="set('sub_light')">
-        <img src="./pic/sub_dark.png" class="awoken_skill" onclick="set('sub_dark')">
-        <p>ドロップ系覚醒</p>
-        <img src="./pic/drop_fire.png" class="awoken_skill" onclick="set('drop_fire')">
-        <img src="./pic/drop_water.png" class="awoken_skill" onclick="set('drop_water')">
-        <img src="./pic/drop_wood.png" class="awoken_skill" onclick="set('drop_wood')">
-        <img src="./pic/drop_light.png" class="awoken_skill" onclick="set('drop_light')">
-        <img src="./pic/drop_dark.png" class="awoken_skill" onclick="set('drop_dark')">
-        <img src="./pic/drop_rcv.png" class="awoken_skill" onclick="set('drop_rcv')">
-        <img src="./pic/drop_fire_p.png" class="awoken_skill" onclick="set('drop_fire_p')">
-        <img src="./pic/drop_water_p.png" class="awoken_skill" onclick="set('drop_water_p')">
-        <img src="./pic/drop_wood_p.png" class="awoken_skill" onclick="set('drop_wood_p')">
-        <img src="./pic/drop_light_p.png" class="awoken_skill" onclick="set('drop_light_p')">
-        <img src="./pic/drop_dark_p.png" class="awoken_skill" onclick="set('drop_dark_p')">
-        <img src="./pic/drop_rcv_p.png" class="awoken_skill" onclick="set('drop_rcv_p')">
-        <img src="./pic/combo.png" class="awoken_skill" onclick="set('combo')">
-        <img src="./pic/fall_jama.png" class="awoken_skill" onclick="set('fall_jama')">
-        <img src="./pic/fall_jama_p.png" class="awoken_skill" onclick="set('fall_jama_p')">
-        <img src="./pic/fall_doku.png" class="awoken_skill" onclick="set('fall_doku')">
-        <img src="./pic/fall_doku_p.png" class="awoken_skill" onclick="set('fall_doku_p')">
-        <p>耐性覚醒</p>
-        <img src="./pic/resist_kumo.png" class="awoken_skill" onclick="set('resist_kumo')">
-        <img src="./pic/resist_tape.png" class="awoken_skill" onclick="set('resist_tape')">
-        <img src="./pic/resist_blind.png" class="awoken_skill" onclick="set('resist_blind')">
-        <img src="./pic/resist_blind_p.png" class="awoken_skill" onclick="set('resist_blind_p')">
-        <img src="./pic/resist_jama.png"resist_jama class="awoken_skill" onclick="set('resist_jama')">
-        <img src="./pic/resist_jama_p.png" class="awoken_skill" onclick="set('resist_jama_p')">
-        <img src="./pic/resist_doku.png" class="awoken_skill" onclick="set('resist_doku')">
-        <img src="./pic/resist_doku_p.png" class="awoken_skill" onclick="set('resist_doku_p')">
-        <img src="./pic/barrier_fire.png" class="awoken_skill" onclick="set('barrier_fire')">
-        <img src="./pic/barrier_water.png" class="awoken_skill" onclick="set('barrier_water')">
-        <img src="./pic/barrier_wood.png" class="awoken_skill" onclick="set('barrier_wood')">
-        <img src="./pic/barrier_light.png" class="awoken_skill" onclick="set('barrier_light')">
-        <img src="./pic/barrier_dark.png" class="awoken_skill" onclick="set('barrier_dark')">
-        <img src="./pic/barrier_fire_p.png" class="awoken_skill" onclick="set('barrier_fire_p')">
-        <img src="./pic/barrier_water_p.png" class="awoken_skill" onclick="set('barrier_water_p')">
-        <img src="./pic/barrier_wood_p.png" class="awoken_skill" onclick="set('barrier_wood_p')">
-        <img src="./pic/barrier_light_p.png" class="awoken_skill" onclick="set('barrier_light_p')">
-        <img src="./pic/barrier_dark_p.png" class="awoken_skill" onclick="set('barrier_dark_p')">
-        <p>過去デザイン覚醒</p>
-        <img src="./pic/old_bonusatt_p.png" class="awoken_skill" onclick="set('old_bonusatt_p')">
-        <img src="./pic/old_4color.png" class="awoken_skill" onclick="set('old_4color')">
-        <img src="./pic/old_4color_p.png" class="awoken_skill" onclick="set('old_4color_p')">
-        <p>北米版覚醒</p>
-        <img src="./pic/na_material.png" class="awoken_skill" onclick="set('na_material')">
-        <img src="./pic/na_material_p.png" class="awoken_skill" onclick="set('na_material_p')">
-        <p>その他</p>
-        <img src="./pic/space.png" class="awoken_skill" onclick="set('space')">
-        <img src="./pic/space_p.png" class="awoken_skill" onclick="set('space_p')">
-        <img src="./pic/syncro.png" class="awoken_skill" onclick="set('syncro')">
-        <img src="./pic/transparent.png" class="awoken_skill transparent" onclick="set('transparent')">
-        <br>
-        <!--<hr class="space">
-          <p>背景色設定</p>
-          <img src="./pic/color_black.png" class="awoken_skill" onclick="color('black')">
-          <img src="./pic/color_white.png" class="awoken_skill" onclick="color('white')">
-          <img src="./pic/color_green.png" class="awoken_skill" onclick="color('#00ff00')">
-          <img src="./pic/color_magenta.png" class="awoken_skill" onclick="color('magenta')">-->
-      </div>
-      <hr class="space">
-      <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
-      <a href="https://x.com/yuunium">ゆうにうむ(@yuunium)</a>
-      <hr class="space">
-      <p>高画質覚醒ダウンロードはこちら</p>
-      <a href="https://pad_awokenskill">高画質覚醒スキル(@pad_awokenskill)</a>
-      <hr class="space">
-      <br><br><br>
+      <ul>
+        <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
+        <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
+      </ul>
     </div>
-    
-    
-    
-      <div id="canvas" class="canvas" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box1')" id="box1"><br>
-        <img src="./pic/super.png" class="awoken_skill" id="super" style="display: none;">
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box2')" id="box2"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box3')" id="box3"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box4')" id="box4"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box5')" id="box5"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box6')" id="box6"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box7')" id="box7"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box8')" id="box8"><br>
-        <img src="./pic/space.png" class="awoken_skill canvas_box" onclick="box('box9')" id="box9"><br>
-      </div>
-      
-  
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="./script.js"></script>
+    <hr class="space">
+    <details>
+      <summary class="bold">各種設定、ダウンロード、共有用URL、
+      </summary>
+      <br>
+      <button onclick="nomal()">初期状態</button>
+      <button onclick="super_skill()">超覚醒のみ</button>
+      <button onclick="syncro()">シンクロ覚醒のみ</button>
+      <hr class="space">
+      <p>ダウンロードボタン</p>
+      <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
+      <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
+      <a style="display: none;" id="downloadImage" href=""></a>
+      <img style="display: none;" id="displayImage"></img>
+      <hr class="space">
+      <p>共有用URL</p>
+      <button onclick="copy()">URLコピー</button>
+      <button onclick="url_reset()">URLリセット</button><br>
+      <a id="url" href="https://yuunium.github.io/awokenskill/?">https://yuunium.github.io/awokenskill/?</a>
+    </details>
+    <hr class="space">
+    <div class="InnerPalette" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
+
+          <!--
+      <img src="./pic/" onclick="set('')">    
+      -->
+
+      <p>パズル系火力覚醒</p>
+      <img src="./pic/7c.png" onclick="set('7c')">
+      <img src="./pic/7c_p.png" onclick="set('7c_p')">
+      <img src="./pic/7c3.png" onclick="set('7c3')">
+      <img src="./pic/7c4.png" onclick="set('7c4')">
+      <img src="./pic/7c10.png" onclick="set('7c10')">
+      <img src="./pic/10c.png" onclick="set('10c')">
+      <img src="./pic/10c_p.png" onclick="set('10c_p')">
+      <img src="./pic/void.png" onclick="set('void')">
+      <img src="./pic/void_p.png" onclick="set('void_p')">
+      <img src="./pic/levitate.png" onclick="set('levitate')">
+      <img src="./pic/way.png" onclick="set('way')">
+      <img src="./pic/way_p.png" onclick="set('way_p')">
+      <img src="./pic/3color.png" onclick="set('3color')">
+      <img src="./pic/3color_p.png" onclick="set('3color_p')">
+      <img src="./pic/4color.png" onclick="set('4color')">
+      <img src="./pic/4color_p.png" onclick="set('4color_p')">
+      <img src="./pic/5color.png" onclick="set('5color')">
+      <img src="./pic/5color_p.png" onclick="set('5color_p')">
+      <img src="./pic/l.png" onclick="set('l')">
+      <img src="./pic/l_p.png" onclick="set('l_p')">
+      <img src="./pic/cross.png" onclick="set('cross')">
+      <img src="./pic/cross_p.png" onclick="set('cross_p')">
+      <img src="./pic/t.png" onclick="set('t')">
+      <img src="./pic/t_p.png" onclick="set('t_p')">
+      <img src="./pic/many.png" onclick="set('many')">
+      <img src="./pic/many_p.png" onclick="set('many_p')">
+      <img src="./pic/guardbreak.png" onclick="set('guardbreak')">
+      <img src="./pic/rcvl.png" onclick="set('rcvl')">
+      <img src="./pic/bonusatt.png" onclick="set('bonusatt')">
+      <img src="./pic/bonusatt_p.png" onclick="set('bonusatt_p')">
+      <img src="./pic/50more.png" onclick="set('50more')">
+      <img src="./pic/50less.png" onclick="set('50less')">
+      <p>各色火力覚醒</p>
+      <img src="./pic/row_fire.png" onclick="set('row_fire')">
+      <img src="./pic/row_water.png" onclick="set('row_water')">
+      <img src="./pic/row_wood.png" onclick="set('row_wood')">
+      <img src="./pic/row_light.png" onclick="set('row_light')">
+      <img src="./pic/row_dark.png" onclick="set('row_dark')">
+      <img src="./pic/row3_fire.png" onclick="set('row3_fire')">
+      <img src="./pic/row3_water.png" onclick="set('row3_water')">
+      <img src="./pic/row3_wood.png" onclick="set('row3_wood')">
+      <img src="./pic/row3_light.png" onclick="set('row3_light')">
+      <img src="./pic/row3_dark.png" onclick="set('row3_dark')">
+      <img src="./pic/combo_fire.png" onclick="set('combo_fire')">
+      <img src="./pic/combo_water.png" onclick="set('combo_water')">
+      <img src="./pic/combo_wood.png" onclick="set('combo_wood')">
+      <img src="./pic/combo_light.png" onclick="set('combo_light')">
+      <img src="./pic/combo_dark.png" onclick="set('combo_dark')">
+      <img src="./pic/combo_fire_p.png" onclick="set('combo_fire_p')">
+      <img src="./pic/combo_water_p.png" onclick="set('combo_water_p')">
+      <img src="./pic/combo_wood_p.png" onclick="set('combo_wood_p')">
+      <img src="./pic/combo_light_p.png" onclick="set('combo_light_p')">
+      <img src="./pic/combo_dark_p.png" onclick="set('combo_dark_p')">
+      <p>ステータス上昇覚醒</p>
+      <img src="./pic/taru.png" onclick="set('taru')">
+      <img src="./pic/in.png" onclick="set('in')">
+      <img src="./pic/yo.png" onclick="set('yo')">
+      <img src="./pic/all.png" onclick="set('all')">
+      <img src="./pic/all_p.png" onclick="set('all_p')">
+      <img src="./pic/voice.png" onclick="set('voice')">
+      <img src="./pic/hp.png" onclick="set('hp')">
+      <img src="./pic/hp_p.png" onclick="set('hp_p')">
+      <img src="./pic/hp_m.png" onclick="set('hp_m')">
+      <img src="./pic/team_hp.png" onclick="set('team_hp')">
+      <img src="./pic/team_hp_p.png" onclick="set('team_hp_p')">
+      <img src="./pic/team_hp_m.png" onclick="set('team_hp_m')">
+      <img src="./pic/rcv.png" onclick="set('rcv')">
+      <img src="./pic/rcv_p.png" onclick="set('rcv_p')">
+      <img src="./pic/rcv_m.png" onclick="set('rcv_m')">
+      <img src="./pic/team_rcv.png" onclick="set('team_rcv')">
+      <img src="./pic/team_rcv_p.png" onclick="set('team_rcv_p')">
+      <img src="./pic/team_rcv_m.png" onclick="set('team_rcv_m')">
+      <img src="./pic/att.png" onclick="set('att')">
+      <img src="./pic/att_p.png" onclick="set('att_p')">
+      <img src="./pic/att_m.png" onclick="set('att_m')">
+      <img src="./pic/multi.png" onclick="set('multi')">
+      <img src="./pic/multi_p.png" onclick="set('multi_p')">
+      <p>補助効果覚醒</p>
+      <img src="./pic/assist.png" onclick="set('assist')">
+      <img src="./pic/boost.png" onclick="set('boost')">
+      <img src="./pic/boost_p.png" onclick="set('boost_p')">
+      <img src="./pic/bind.png" onclick="set('bind')">
+      <img src="./pic/bind_p.png" onclick="set('bind_p')">
+      <img src="./pic/huin.png" onclick="set('huin')">
+      <img src="./pic/huin_p.png" onclick="set('huin_p')">
+      <img src="./pic/charge.png" onclick="set('charge')">
+      <img src="./pic/charge_p.png" onclick="set('charge_p')">
+      <img src="./pic/time.png" onclick="set('time')">
+      <img src="./pic/time_p.png" onclick="set('time_p')">
+      <img src="./pic/time_m.png" onclick="set('time_m')">
+      <img src="./pic/autorcv.png" onclick="set('autorcv')">
+      <img src="./pic/autorcv_p.png" onclick="set('autorcv_p')">
+      <img src="./pic/bindrcv.png" onclick="set('bindrcv')">
+      <img src="./pic/bindrcv_p.png" onclick="set('bindrcv_p')">
+      <img src="./pic/sub_fire.png" onclick="set('sub_fire')">
+      <img src="./pic/sub_water.png" onclick="set('sub_water')">
+      <img src="./pic/sub_wood.png" onclick="set('sub_wood')">
+      <img src="./pic/sub_light.png" onclick="set('sub_light')">
+      <img src="./pic/sub_dark.png" onclick="set('sub_dark')">
+      <p>ドロップ系覚醒</p>
+      <img src="./pic/drop_fire.png" onclick="set('drop_fire')">
+      <img src="./pic/drop_water.png" onclick="set('drop_water')">
+      <img src="./pic/drop_wood.png" onclick="set('drop_wood')">
+      <img src="./pic/drop_light.png" onclick="set('drop_light')">
+      <img src="./pic/drop_dark.png" onclick="set('drop_dark')">
+      <img src="./pic/drop_rcv.png" onclick="set('drop_rcv')">
+      <img src="./pic/drop_fire_p.png" onclick="set('drop_fire_p')">
+      <img src="./pic/drop_water_p.png" onclick="set('drop_water_p')">
+      <img src="./pic/drop_wood_p.png" onclick="set('drop_wood_p')">
+      <img src="./pic/drop_light_p.png" onclick="set('drop_light_p')">
+      <img src="./pic/drop_dark_p.png" onclick="set('drop_dark_p')">
+      <img src="./pic/drop_rcv_p.png" onclick="set('drop_rcv_p')">
+      <img src="./pic/combo.png" onclick="set('combo')">
+      <img src="./pic/fall_jama.png" onclick="set('fall_jama')">
+      <img src="./pic/fall_jama_p.png" onclick="set('fall_jama_p')">
+      <img src="./pic/fall_doku.png" onclick="set('fall_doku')">
+      <img src="./pic/fall_doku_p.png" onclick="set('fall_doku_p')">
+      <p>耐性覚醒</p>
+      <img src="./pic/resist_kumo.png" onclick="set('resist_kumo')">
+      <img src="./pic/resist_tape.png" onclick="set('resist_tape')">
+      <img src="./pic/resist_blind.png" onclick="set('resist_blind')">
+      <img src="./pic/resist_blind_p.png" onclick="set('resist_blind_p')">
+      <img src="./pic/resist_jama.png" onclick="set('resist_jama')">
+      <img src="./pic/resist_jama_p.png" onclick="set('resist_jama_p')">
+      <img src="./pic/resist_doku.png" onclick="set('resist_doku')">
+      <img src="./pic/resist_doku_p.png" onclick="set('resist_doku_p')">
+      <img src="./pic/barrier_fire.png" onclick="set('barrier_fire')">
+      <img src="./pic/barrier_water.png" onclick="set('barrier_water')">
+      <img src="./pic/barrier_wood.png" onclick="set('barrier_wood')">
+      <img src="./pic/barrier_light.png" onclick="set('barrier_light')">
+      <img src="./pic/barrier_dark.png" onclick="set('barrier_dark')">
+      <img src="./pic/barrier_fire_p.png" onclick="set('barrier_fire_p')">
+      <img src="./pic/barrier_water_p.png" onclick="set('barrier_water_p')">
+      <img src="./pic/barrier_wood_p.png" onclick="set('barrier_wood_p')">
+      <img src="./pic/barrier_light_p.png" onclick="set('barrier_light_p')">
+      <img src="./pic/barrier_dark_p.png" onclick="set('barrier_dark_p')">
+      <p>キラー覚醒</p>
+      <img src="./pic/killer_awoken.png" onclick="set('killer_awoken')">
+      <img src="./pic/killer_awoken_p.png" onclick="set('killer_awoken_p')">
+      <img src="./pic/killer_machine.png" onclick="set('killer_machine')">
+      <img src="./pic/killer_machine_p.png" class="awoken_skill transparent" onclick="set('killer_machine_p')">
+      <p>過去デザイン覚醒</p>
+      <img src="./pic/old_bonusatt_p.png" onclick="set('old_bonusatt_p')">
+      <img src="./pic/old_4color.png" onclick="set('old_4color')">
+      <img src="./pic/old_4color_p.png" onclick="set('old_4color_p')">
+      <p>北米版覚醒</p>
+      <img src="./pic/na_material.png" onclick="set('na_material')">
+      <img src="./pic/na_material_p.png" onclick="set('na_material_p')">
+      <p>その他</p>
+      <img src="./pic/space.png" onclick="set('space')">
+      <img src="./pic/space_p.png" onclick="set('space_p')">
+      <img src="./pic/syncro.png" onclick="set('syncro')">
+      <img src="./pic/transparent.png" class="awoken_skill transparent" onclick="set('transparent')">
+      <br>
+      <!--<hr class="space">
+          <p>背景色設定</p>
+          <img src="./pic/color_black.png" onclick="color('black')">
+          <img src="./pic/color_white.png" onclick="color('white')">
+          <img src="./pic/color_green.png" onclick="color('#00ff00')">
+          <img src="./pic/color_magenta.png" onclick="color('magenta')">-->
+    </div>
+    <hr class="space">
+    <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
+    <a href="https://x.com/yuunium">ゆうにうむ(@yuunium)</a>
+    <hr class="space">
+    <p>高画質覚醒ダウンロードはこちら</p>
+    <a href="https://pad_awokenskill">高画質覚醒スキル(@pad_awokenskill)</a>
+    <hr class="space">
+    <br><br><br>
+  </div>
+
+
+
+  <div id="canvas" class="canvas" oncontextmenu="return false;" onselectstart="return false;"
+    onmousedown="return false;">
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box1')" id="box1"><br>
+    <img src="./pic/super.png" id="super" style="display: none;">
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box2')" id="box2"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box3')" id="box3"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box4')" id="box4"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box5')" id="box5"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box6')" id="box6"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box7')" id="box7"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box8')" id="box8"><br>
+    <img src="./pic/space.png" class="canvas_box" onclick="box('box9')" id="box9"><br>
+  </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="./script.js"></script>
 
 </html>

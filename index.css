@@ -38,7 +38,11 @@ img {
   user-select: none;
 }
 
-.awoken_skill {
+.InnerPalette img{
+  width: 50px;
+}
+
+#canvas img{
   width: 50px;
 }
 
