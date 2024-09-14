@@ -32,13 +32,12 @@ h1:after {
   font-weight: bold;
 }
 
-img {
+.InnerPalette img ,.canvas img{
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-touch-callout: none;
   -moz-user-select: none;
   user-select: none;
-  width:50px;
   width:50px;
 }
 
@@ -137,9 +136,7 @@ summary{
   margin-top: 20px;
   margin-left: 10vw;
   border: 1px solid; 
-  height: 480px;
-}
-
+  height: 60vh;
 a {
   word-wrap:break-word;
 }
