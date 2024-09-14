@@ -134,10 +134,10 @@ summary{
 }
 
 #displayImage{
-  height: 60vh;
   margin-top: 20px;
   margin-left: 10vw;
   border: 1px solid; 
+  height: 480px;
 }
 
 a {
