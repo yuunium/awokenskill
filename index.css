@@ -24,7 +24,9 @@ h1:after {
   backface-visibility: hidden;
 }
 
-
+.details{
+  padding-left: 20px;
+}
 
 .bold {
   font-weight: bold;
@@ -36,21 +38,14 @@ img {
   -moz-touch-callout: none;
   -moz-user-select: none;
   user-select: none;
-}
-
-.InnerPalette img{
-  width: 50px;
-}
-
-#canvas img{
-  width: 50px;
+  width:50px;
 }
 
 .palette {
-  width: 80vw;
   margin: 0;
-  padding: 0 2vw 0 2vw;
+  padding: 0 20px;
   background-color: white;
+  flex-grow: 1;
 }
 
 .InnerPalette{
@@ -59,20 +54,25 @@ img {
 }
 
 .canvas {
-  width: 20vw;
+  width: fit-content;
   position: sticky;
   top: 0px;
   height: 90vh;
-  text-align: center;
+  display:flex;
+  padding: 0 2vw;
+  flex-grow: 0;
 }
 
 .canvas_box {
-  padding-top: 20px;
-  position: relative;
+  padding-top: 18px;
 }
 
 hr.space {
   margin: 20px 0;
+}
+
+br.space{
+  height:20px;
 }
 
 .transparent {
@@ -90,9 +90,23 @@ hr.space {
   font-size: 1.5rem;
 }
 
+.addskill{
+  width:50px;
+  padding-right:20px;
+}
+
+.box{
+  width:50px;
+}
+
 #super {
-  position: relative;
-  top: -15px;
+  position: absolute;
+  top: 63px;
+}
+
+#box10{
+position:absolute;
+top:0px;
 }
 
 summary{
