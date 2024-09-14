@@ -4,26 +4,14 @@ function box(a) {
   selected_box = a;
 };
 
-var set_count = 0;
-let now_url= "";
-let url = document.getElementById("url");
+
+
+let boxes = ["", "", "", "", "", "", "", "", "", ""];
 function set(a) {
   document.getElementById(selected_box).src = './pic/' + a + '.png';
-
   let parameter_number = selected_box.charAt(selected_box.length - 1);
-  if(set_count>0) {
-    let new_url = url + "&" + parameter_number + "=" + a;
-    url.href = new_url;
-    url.innerHTML = new_url;
-    now_url = new_url;
-  }else{
-    let new_url = url + parameter_number + "=" + a;
-    url.href = new_url;
-    url.innerHTML = new_url;
-    now_url = new_url;
-  }
+  boxes[parameter_number - 1] = a;
   selected_box = "";
-  set_count = set_count+1;
 };
 function downloadPngFile() {
   const element = document.getElementById('canvas');
@@ -45,41 +33,63 @@ function downloadPngDisplay() {
   getImage.style.display = "block";
 };
 
-function copy(){
+let now_url = "";
+function copy() {
+  now_url = "https://yuunium.github.io/awokenskill/";
+  for (let i = 1; i < 11; i++) {
+    if (boxes[i - 1] != "") {
+      if (i < 2) {
+        now_url = now_url + "?" + i + "=" + boxes[i - 1];
+      } else {
+        now_url = now_url + "&" + i + "=" + boxes[i - 1];
+      }
+      if (boxes[9] = "") {
+        now_url = now_url + "&add=close";
+      } else {
+        now_url = now_url + "&add=open";
+      }
+    }
+  }
   navigator.clipboard.writeText(now_url);
-}
+};
 
-function url_reset(){
-  url.href = "https://yuunium.github.io/awokenskill/?"
-  url.innerHTML = "https://yuunium.github.io/awokenskill/?";
-}
-
-function nomal() {
-  document.getElementById('super').style.display = "none";
-  for (let i = 1; i < 10; i++) {
+function skillreset() {
+  for (let i = 1; i < 11; i++) {
     var getbox = document.getElementById('box' + i);
     getbox.src = './pic/space.png';
     getbox.style.display = "";
   };
 };
 
+function nomal() {
+  document.getElementById('addskill').style.display = "none";
+};
+
 function super_skill() {
-  document.getElementById('box1').src = './pic/space.png';
+  document.getElementById('addskill').style.display = "";
   document.getElementById('super').style.display = "";
-  for (let i = 2; i < 10; i++) {
-    var getbox = document.getElementById('box' + i);
-    getbox.style.display = "none";
-  };
+  document.getElementById('box10').src = "./pic/question.png";
 };
 
 function syncro() {
-  document.getElementById('box1').src = './pic/syncro.png';
+  document.getElementById('addskill').style.display = "";
   document.getElementById('super').style.display = "none";
-  for (let i = 2; i < 10; i++) {
-    var getbox = document.getElementById('box' + i);
-    getbox.style.display = "none";
-  };
+  document.getElementById('box10').src = "./pic/syncro.png";
 };
+
+function disappear_bar() {
+  document.getElementById('super').style.display = "none";
+  if (document.getElementById("box10").src == "./pic/question.png") {
+    document.getElementById("box10").src == "./pic/syncro.png"
+}
+}
+
+function appear_bar() {
+  document.getElementById('super').style.display = "";
+  if (document.getElementById("box10").src == "./pic/syncro.png") {
+    document.getElementById("box10").src == "./pic/question.png"
+}
+}
 
 function even(array) {
   const result = [];
@@ -108,12 +118,16 @@ function odd(array) {
 var params = location.href.split("?");
 if (params.length > 1) {
   let X = params[1].split(/&|=/);
-  let Y = even(X);
+  let Y = even(X).pop();
   let Z = odd(X);
+  let Zlast = Z.pop();
   let length = Y.length;
 
   for (let i = 0; i < length; i++) {
     selected_box = "box" + String(Number(Y[i]));
     set(Z[i]);
+  };
+  if (Zlast == "open") {
+    document.getElementById('addskill').style.display = "";
   }
-}
+};

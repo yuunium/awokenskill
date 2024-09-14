@@ -38,7 +38,6 @@
   <div class="palette">
 
     <h1>覚醒スキル性能作成補助ツール</h1>
-    <p id="lastupdate">最終更新:2024/08/14/13:00</p>
     <div>
       <details>
         <summary class="bold">使い方</summary>
@@ -54,34 +53,36 @@
         </ul>
       </details>
       <ul>
-        <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
-        <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
       </ul>
     </div>
-    <hr class="space">
+    <hr>
+    <li>不明点、ご要望などはページ下リンクよりお願いします。</li>
+    <li class="important">ツイートの最後に @yuuniumつけてメンションしてもらえるとめっちゃ喜びますのでぜひ良ければお願いします。</li>
+    <hr>
     <details>
-      <summary class="bold">各種設定、ダウンロード、共有用URL、
+      <summary class="bold">ダウンロード、共有用URL、
       </summary>
-      <br>
-      <button onclick="nomal()">初期状態</button>
-      <button onclick="super_skill()">超覚醒のみ</button>
-      <button onclick="syncro()">シンクロ覚醒のみ</button>
-      <hr class="space">
-      <p>ダウンロードボタン</p>
-      <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
-      <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
-      <a style="display: none;" id="downloadImage" href=""></a>
-      <img style="display: none;" id="displayImage"></img>
-      <hr class="space">
-      <p>共有用URL</p>
-      <button onclick="copy()">URLコピー</button>
-      <button onclick="url_reset()">URLリセット</button><br>
-      <a id="url" href="https://yuunium.github.io/awokenskill/?">https://yuunium.github.io/awokenskill/?</a>
+      <div class="details">
+        <p>ダウンロードボタン</p>
+        <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
+        <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
+        <a style="display: none;" id="downloadImage" href=""></a>
+        <img style="display: none;" id="displayImage"></img>
+        <p>共有用URL</p>
+        <button onclick="copy()">URLコピー</button>
+      </div>
     </details>
+    <hr class="space">
+    <button onclick="nomal()">初期状態</button>
+    <button onclick="skillreset()">覚醒リセット</button>
+    <button onclick="super_skill()">超覚醒追加</button>
+    <button onclick="syncro()">シンクロ覚醒追加</button>
+    <button onclick="appear_bar()">超覚醒バー追加</button>
+    <button onclick="disappear_bar()">超覚醒バー削除</button>
     <hr class="space">
     <div class="InnerPalette" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
 
-          <!--
+      <!--
       <img src="./pic/" onclick="set('')">    
       -->
 
@@ -211,7 +212,7 @@
       <img src="./pic/barrier_dark.png" onclick="set('barrier_dark')">
       <p>キラー覚醒</p>
       <img src="./pic/killer_machine.png" onclick="set('killer_machine')">
-      <img src="./pic/killer_machine_p.png"onclick="set('killer_machine_p')">
+      <img src="./pic/killer_machine_p.png" onclick="set('killer_machine_p')">
       <img src="./pic/killer_rcv.png" onclick="set('killer_rcv')">
       <img src="./pic/killer_rcv_p.png" onclick="set('killer_rcv_p')">
       <img src="./pic/killer_awoken.png" onclick="set('killer_awoken')">
@@ -223,8 +224,8 @@
       <img src="./pic/7c3.png" onclick="set('7c3')">
       <img src="./pic/7c4.png" onclick="set('7c4')">
       <img src="./pic/7c10.png" onclick="set('7c10')">
-      <img src="./pic/100c.png"onclick="set('100c')">
-      <img src="./pic/100c_p.png"onclick="set('100c_p')">
+      <img src="./pic/100c.png" onclick="set('100c')">
+      <img src="./pic/100c_p.png" onclick="set('100c_p')">
       <img src="./pic/t_p.png" onclick="set('t_p')">
       <img src="./pic/all_p.png" onclick="set('all_p')">
       <img src="./pic/huin_p.png" onclick="set('huin_p')">
@@ -250,12 +251,6 @@
       <img src="./pic/syncro.png" onclick="set('syncro')">
       <img src="./pic/transparent.png" class="transparent" onclick="set('transparent')">
       <br>
-      <!--<hr class="space">
-          <p>背景色設定</p>
-          <img src="./pic/color_black.png" onclick="color('black')">
-          <img src="./pic/color_white.png" onclick="color('white')">
-          <img src="./pic/color_green.png" onclick="color('#00ff00')">
-          <img src="./pic/color_magenta.png" onclick="color('magenta')">-->
     </div>
     <hr class="space">
     <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
@@ -264,24 +259,33 @@
     <p>高画質覚醒ダウンロードはこちら</p>
     <a href="https://pad_awokenskill">高画質覚醒スキル(@pad_awokenskill)</a>
     <hr class="space">
-    <br><br><br>
+    <br <p id="lastupdate">最終更新:2024/08/14/13:00</p>
+    <br><br>
   </div>
 
 
 
   <div id="canvas" class="canvas" oncontextmenu="return false;" onselectstart="return false;"
     onmousedown="return false;">
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box1')" id="box1"><br>
-    <img src="./pic/super.png" id="super" style="display: none;">
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box2')" id="box2"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box3')" id="box3"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box4')" id="box4"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box5')" id="box5"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box6')" id="box6"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box7')" id="box7"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box8')" id="box8"><br>
-    <img src="./pic/space.png" class="canvas_box" onclick="box('box9')" id="box9"><br>
-  </div>
+
+    <div class="addskill" id="addskill" style="display:none;">
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box10')" id="box10"><br>
+      <img src="./pic/super.png" id="super" style="display:none;">
+    </div>
+
+    <div class="box">
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box1')" id="box1"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box2')" id="box2"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box3')" id="box3"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box4')" id="box4"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box5')" id="box5"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box6')" id="box6"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box7')" id="box7"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box8')" id="box8"><br>
+      <img src="./pic/space.png" class="canvas_box" onclick="box('box9')" id="box9"><br>
+    </div>
+    <div>
+
 
 
 </body>
