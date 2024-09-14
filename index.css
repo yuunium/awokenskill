@@ -39,12 +39,15 @@ img {
   -moz-user-select: none;
   user-select: none;
   width:50px;
+  width:50px;
 }
 
 .palette {
   margin: 0;
   padding: 0 20px;
+  padding: 0 20px;
   background-color: white;
+  flex-grow: 1;
   flex-grow: 1;
 }
 
@@ -55,9 +58,13 @@ img {
 
 .canvas {
   width: fit-content;
+  width: fit-content;
   position: sticky;
   top: 0px;
   height: 90vh;
+  display:flex;
+  padding: 0 2vw;
+  flex-grow: 0;
   display:flex;
   padding: 0 2vw;
   flex-grow: 0;
@@ -65,10 +72,15 @@ img {
 
 .canvas_box {
   padding-top: 18px;
+  padding-top: 18px;
 }
 
 hr.space {
   margin: 20px 0;
+}
+
+br.space{
+  height:20px;
 }
 
 br.space{
@@ -100,6 +112,13 @@ br.space{
 }
 
 #super {
+  position: absolute;
+  top: 63px;
+}
+
+#box10{
+position:absolute;
+top:0px;
   position: absolute;
   top: 63px;
 }
