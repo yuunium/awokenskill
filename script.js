@@ -43,11 +43,11 @@ function copy() {
       } else {
         now_url = now_url + "&" + i + "=" + boxes[i - 1];
       }
-      if (boxes[9] = "") {
-        now_url = now_url + "&add=close";
-      } else {
-        now_url = now_url + "&add=open";
-      }
+    }
+    if (boxes[9] = "") {
+      now_url = now_url + "&add=close";
+    } else {
+      now_url = now_url + "&add=open";
     }
   }
   navigator.clipboard.writeText(now_url);
