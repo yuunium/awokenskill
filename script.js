@@ -1,5 +1,10 @@
 var selected_box = "";
 function box(a) {
+  for(let i = 0; i < 11; i++;){
+    if (document.getElementById(i).src *= "selected.png"){
+      document.getElementById(i).src = "./pic/space.png";
+    }
+  }
   document.getElementById(a).src = './pic/selected.png';
   selected_box = a;
 };
@@ -8,11 +13,6 @@ function box(a) {
 
 let boxes = ["", "", "", "", "", "", "", "", "", ""];
 function set(a) {
-  for(let i = 0; i < 11; i++;){
-    if (document.getElementById(i).src *= "selected.png"){
-      document.getElementById(i).src = "./pic/space.png";
-    }
-  }
   document.getElementById(selected_box).src = './pic/' + a + '.png';
   let parameter_number = selected_box.charAt(selected_box.length - 1);
   boxes[parameter_number - 1] = a;
