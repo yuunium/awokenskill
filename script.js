@@ -79,16 +79,16 @@ function syncro() {
 
 function disappear_bar() {
   document.getElementById('super').style.display = "none";
-  if (document.getElementById("box10").src == "./pic/question.png") {
-    document.getElementById("box10").src == "./pic/syncro.png"
-}
+  if (document.getElementById("box10").src == "question.png") {
+    document.getElementById("box10").src == ".pic/syncro.png";
+};
 }
 
 function appear_bar() {
   document.getElementById('super').style.display = "";
   if (document.getElementById("box10").src == "./pic/syncro.png") {
-    document.getElementById("box10").src == "./pic/question.png"
-}
+    document.getElementById("box10").src = "./pic/question.png";
+};
 }
 
 function even(array) {
