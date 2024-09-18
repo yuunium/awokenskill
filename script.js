@@ -1,9 +1,5 @@
 var selected_box = "";
 function box(a) {
-  for(let i = 0; i < 11; i++){
-  if(document.getElementById(i).src.includes("selected.png")){
-    document.getElementById(i).src = "./pic/space.png";
-  }
   document.getElementById(a).src = './pic/selected.png';
   selected_box = a;
 };
