@@ -1,5 +1,5 @@
 var selected_box = "";
-function box(a) 
+function box(a) {
   document.getElementById(a).src = './pic/selected.png';
   selected_box = a;
 };
