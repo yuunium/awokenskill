@@ -81,7 +81,7 @@ function syncro() {
 function disappear_bar() {
   document.getElementById('super').style.display = "none";
   if (document.getElementById("box10").src.includes("question.png")) {
-    document.getElementById("box10").src = ".pic/syncro.png";
+    document.getElementById("box10").src = "./pic/syncro.png";
 };
 }
 
