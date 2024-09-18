@@ -2,7 +2,6 @@
   display: flex;
   margin: 0;
   padding: 0;
-  background-color:black;
 }
 
 h1 {
@@ -47,7 +46,6 @@ h1:after {
   padding: 0 20px;
   background-color: white;
   flex-grow: 1;
-  flex-grow: 1;
 }
 
 .InnerPalette{
@@ -67,6 +65,7 @@ h1:after {
   display:flex;
   padding: 0 2vw;
   flex-grow: 0;
+  background-color:black;
 }
 
 .canvas_box {
