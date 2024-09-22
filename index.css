@@ -32,6 +32,10 @@ h1:after {
   font-weight: bold;
 }
 
+.btn button{
+  font-size:1.3rem;
+}
+
 .InnerPalette img ,.canvas img{
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -44,9 +48,7 @@ h1:after {
 .palette {
   margin: 0;
   padding: 0 20px;
-  padding: 0 20px;
   background-color: white;
-  flex-grow: 1;
   flex-grow: 1;
 }
 
@@ -57,13 +59,9 @@ h1:after {
 
 .canvas {
   width: fit-content;
-  width: fit-content;
   position: sticky;
   top: 0px;
   height: 90vh;
-  display:flex;
-  padding: 0 2vw;
-  flex-grow: 0;
   display:flex;
   padding: 0 2vw;
   flex-grow: 0;
@@ -71,19 +69,10 @@ h1:after {
 
 .canvas_box {
   padding-top: 18px;
-  padding-top: 18px;
 }
 
 hr.space {
   margin: 20px 0;
-}
-
-br.space{
-  height:20px;
-}
-
-br.space{
-  height:20px;
 }
 
 .transparent {
@@ -118,8 +107,6 @@ br.space{
 #box10{
 position:absolute;
 top:0px;
-  position: absolute;
-  top: 63px;
 }
 
 #box10{

@@ -13,6 +13,7 @@ function set(a) {
   boxes[parameter_number - 1] = a;
   selected_box = "";
 };
+
 function downloadPngFile() {
   const element = document.getElementById('canvas');
   const getImage = document.getElementById("downloadImage");
@@ -44,7 +45,7 @@ function copy() {
         now_url = now_url + "&" + i + "=" + boxes[i - 1];
       }
     }
-    if (boxes[9] = "") {
+    if (boxes[9] == "") {
       now_url = now_url + "&add=close";
     } else {
       now_url = now_url + "&add=open";
@@ -79,16 +80,16 @@ function syncro() {
 
 function disappear_bar() {
   document.getElementById('super').style.display = "none";
-  if (document.getElementById("box10").src == "./pic/question.png") {
-    document.getElementById("box10").src == "./pic/syncro.png"
-}
+  if (document.getElementById("box10").src.includes("question.png")) {
+    document.getElementById("box10").src = "./pic/syncro.png";
+};
 }
 
 function appear_bar() {
   document.getElementById('super').style.display = "";
-  if (document.getElementById("box10").src == "./pic/syncro.png") {
-    document.getElementById("box10").src == "./pic/question.png"
-}
+  if (document.getElementById("box10").src.includes("syncro.png")) {
+    document.getElementById("box10").src = "./pic/question.png";
+};
 }
 
 function even(array) {
