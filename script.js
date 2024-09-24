@@ -45,11 +45,6 @@ function copy() {
         now_url = now_url + "&" + i + "=" + boxes[i - 1];
       }
     }
-    if (boxes[9] == "") {
-      now_url = now_url + "&add=close";
-    } else {
-      now_url = now_url + "&add=open";
-    }
   }
   navigator.clipboard.writeText(now_url);
 };
@@ -119,16 +114,11 @@ function odd(array) {
 var params = location.href.split("?");
 if (params.length > 1) {
   let X = params[1].split(/&|=/);
-  let Y = even(X).pop();
+  let Y = even(X);
   let Z = odd(X);
-  let Zlast = Z.pop();
-  let length = Y.length;
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < 11; i++) {
     selected_box = "box" + String(Number(Y[i]));
     set(Z[i]);
   };
-  if (Zlast == "open") {
-    document.getElementById('addskill').style.display = "";
-  }
 };
