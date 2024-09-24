@@ -53,6 +53,7 @@ function copy() {
     } else {
       now_url = now_url + "&add=open";
     }
+  console.log(boxes);
   navigator.clipboard.writeText(now_url);
 };
 
@@ -128,6 +129,8 @@ if (params.length > 1) {
 
   for (let i = 0; i < length; i++) {
     selected_box = "box" + String(Number(Y[i]));
+    console.log(X);
+    console.log(Y);
     set(Z[i]);
   };
   if (Zlast == "open") {
