@@ -122,8 +122,9 @@ function odd(array) {
 var params = location.href.split("?");
 if (params.length > 1) {
   let X = params[1].split(/&|=/);
-  let Y = even(X).pop();
+  let Y = even(X);
   let Z = odd(X);
+  let Ylast = Y.pop();
   let Zlast = Z.pop();
   let length = Y.length;
 
@@ -131,7 +132,9 @@ if (params.length > 1) {
     selected_box = "box" + String(Number(Y[i]));
     console.log(X);
     console.log(Y);
+    console.log(Z);
     set(Z[i]);
+    console.log(Z[i]);
   };
   if (Zlast == "open") {
     document.getElementById('addskill').style.display = "";
