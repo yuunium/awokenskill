@@ -10,6 +10,9 @@ let boxes = ["", "", "", "", "", "", "", "", "", ""];
 function set(a) {
   document.getElementById(selected_box).src = './pic/' + a + '.png';
   let parameter_number = selected_box.charAt(selected_box.length - 1);
+  if(parameter_number == 0){
+    parameter_number = 10;
+  };
   boxes[parameter_number - 1] = a;
   selected_box = "";
 };
