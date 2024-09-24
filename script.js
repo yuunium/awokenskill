@@ -131,9 +131,6 @@ if (params.length > 1) {
 
   for (let i = 0; i < length; i++) {
     selected_box = "box" + String(Number(Y[i]));
-    console.log(X);
-    console.log(Y);
-    console.log(Z);
     set(Z[i]);
     console.log(Z[i]);
   };
