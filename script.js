@@ -42,7 +42,7 @@ function copy() {
   now_url = "https://yuunium.github.io/awokenskill/";
   for (let i = 1; i < 11; i++) {
     if (boxes[i - 1] != "") {
-      if (i == 1) {
+      if (i < 2) {
         now_url = now_url + "?" + i + "=" + boxes[i - 1];
       } else {
         now_url = now_url + "&" + i + "=" + boxes[i - 1];
