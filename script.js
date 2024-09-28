@@ -57,6 +57,7 @@ function copy() {
   console.log(boxes);
   navigator.clipboard.writeText(now_url);
   console.log(now_url);
+  document.getElementById("copy").innerHTML = "コピーしました！"
 };
 
 function skillreset() {
