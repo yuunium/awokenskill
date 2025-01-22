@@ -110,8 +110,7 @@ summary{
   margin-top: 20px;
   margin-left: 10vw;
   border: 1px solid; 
-  height: 60vh;
-}
+  width: 90vw;
 
 a {
   word-wrap:break-word;
