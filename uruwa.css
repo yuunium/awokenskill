@@ -58,7 +58,7 @@ h1:after {
 .canvas {
   position: fixed;
   bottom: 0;
-  padding: 2vh 2vw;
+  padding: 20px 2vw;
   width: 100%;
   z-index: 200;
 }
@@ -67,7 +67,7 @@ h1:after {
   background-color: #000;
   position: fixed;
   bottom: 0;
-  height: calc(4vh + 50px);
+  height: 90px;
   width: 100%;
   z-index: 100;
 }
