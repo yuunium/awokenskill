@@ -58,13 +58,22 @@ h1:after {
 .canvas {
   position: fixed;
   bottom: 0;
-  padding: 1vh 2vw;
+  padding: 2vh 2vw;
   width: 100%;
-  background-color: #000;
+  z-index: 200;
 }
 
-.canvas_box {
-  padding-top: 18px;
+.canvas_back{
+  background-color: #000;
+  position: fixed;
+  bottom: 0;
+  height: calc(4vh + 50px);
+  width: 100%;
+  z-index: 100;
+}
+
+.box{
+  height: 50px;
 }
 
 hr.space {
@@ -84,10 +93,6 @@ hr.space {
   width: 200px;
   height: 70px;
   font-size: 1.5rem;
-}
-
-.box{
-  width:100%;
 }
 
 #super {
