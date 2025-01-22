@@ -60,7 +60,7 @@ h1:after {
   bottom: 0;
   padding: 20px 2vw;
   width: 100%;
-  z-index: 200;
+  background-color: transparent;
 }
 
 .canvas_back{
@@ -69,7 +69,6 @@ h1:after {
   bottom: 0;
   height: 90px;
   width: 100%;
-  z-index: 100;
 }
 
 .box{
