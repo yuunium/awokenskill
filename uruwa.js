@@ -20,7 +20,7 @@ function set(a) {
 function downloadPngFile() {
   const element = document.getElementById('canvas');
   const getImage = document.getElementById("downloadImage");
-  html2canvas(element, { backgroundColor: null, scale: 3, width:1920 }).then(canvas => {
+  html2canvas(element, { backgroundColor: null, scale: 3, width:900 }).then(canvas => {
     getImage.setAttribute("href", canvas.toDataURL());
     getImage.setAttribute("download", "awokenskill.png");
     getImage.click();
@@ -30,7 +30,7 @@ function downloadPngFile() {
 function downloadPngDisplay() {
   const element = document.getElementById('canvas');
   const getImage = document.getElementById("displayImage");
-  html2canvas(element, { backgroundColor: null, scale: 3, width:1920 }).then(canvas => {
+  html2canvas(element, { backgroundColor: null, scale: 3, width:900 }).then(canvas => {
     const imageData = canvas.toDataURL("image/png");
     getImage.src = imageData;
   });
