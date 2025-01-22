@@ -1,0 +1,124 @@
+#body {
+  margin: 0;
+  padding: 0;
+  background-color:black;
+}
+
+h1 {
+  position: relative;
+  padding: 1.5rem 1rem;
+}
+
+h1:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  content: '';
+  background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+  background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+  background-size: 7px 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.details{
+  padding-left: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn button{
+  font-size:1.3rem;
+}
+
+.InnerPalette img ,.canvas img{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-touch-callout: none;
+  -moz-user-select: none;
+  user-select: none;
+  width:50px;
+}
+
+.palette {
+  margin: 0;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.InnerPalette{
+  margin: 0;
+  padding: 0;
+}
+
+.canvas {
+  position: sticky;
+  top: 0px;
+  padding: 0 2vw;
+}
+
+.canvas_box {
+  padding-top: 18px;
+}
+
+hr.space {
+  margin: 20px 0;
+}
+
+.transparent {
+  border: 1px black solid;
+}
+
+.important {
+  color: red;
+  font-weight: bold;
+}
+
+.dl_btn {
+  width: 200px;
+  height: 70px;
+  font-size: 1.5rem;
+}
+
+.addskill{
+  width:50px;
+  padding-right:20px;
+}
+
+.box{
+  width:100%;
+}
+
+#super {
+  position: absolute;
+  top: 63px;
+}
+
+#box10{
+position:absolute;
+top:0px;
+}
+
+#box10{
+position:absolute;
+top:0px;
+}
+
+summary{
+  padding:10px;
+  background-color:#d1f2ff;
+}
+
+#displayImage{
+  margin-top: 20px;
+  margin-left: 10vw;
+  border: 1px solid; 
+  height: 60vh;
+}
+a {
+  word-wrap:break-word;
+}
