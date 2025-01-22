@@ -73,6 +73,7 @@ h1:after {
 
 .box{
   height: 50px;
+  font-size: 0;
 }
 
 hr.space {
