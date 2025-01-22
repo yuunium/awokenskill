@@ -1,7 +1,7 @@
 #body {
   margin: 0;
   padding: 0;
-  background-color:black;
+  position: relative;
 }
 
 h1 {
@@ -56,9 +56,11 @@ h1:after {
 }
 
 .canvas {
-  position: sticky;
-  top: 0px;
-  padding: 0 2vw;
+  position: fixed;
+  bottom: 0;
+  padding: 1vh 2vw;
+  width: 100%;
+  background-color: #000;
 }
 
 .canvas_box {
@@ -84,11 +86,6 @@ hr.space {
   font-size: 1.5rem;
 }
 
-.addskill{
-  width:50px;
-  padding-right:20px;
-}
-
 .box{
   width:100%;
 }
@@ -98,15 +95,6 @@ hr.space {
   top: 63px;
 }
 
-#box10{
-position:absolute;
-top:0px;
-}
-
-#box10{
-position:absolute;
-top:0px;
-}
 
 summary{
   padding:10px;
@@ -119,6 +107,7 @@ summary{
   border: 1px solid; 
   height: 60vh;
 }
+
 a {
   word-wrap:break-word;
 }
