@@ -5,18 +5,6 @@ function box(a) {
 };
 
 
-
-let boxes = ["", "", "", "", "", "", "", "", "", ""];
-function set(a) {
-  document.getElementById(selected_box).src = './pic/' + a + '.png';
-  let parameter_number = selected_box.charAt(selected_box.length - 1);
-  if(parameter_number == 0){
-    parameter_number = 10;
-  };
-  boxes[parameter_number - 1] = a;
-  selected_box = "";
-};
-
 function downloadPngFile() {
   const element = document.getElementById('canvas');
   const getImage = document.getElementById("downloadImage");
@@ -35,29 +23,6 @@ function downloadPngDisplay() {
     getImage.src = imageData;
   });
   getImage.style.display = "block";
-};
-
-let now_url = "";
-function copy() {
-  now_url = "https://yuunium.github.io/awokenskill/";
-  for (let i = 1; i < 11; i++) {
-    if (boxes[i - 1] != "") {
-      if (i < 2) {
-        now_url = now_url + "?" + i + "=" + boxes[i - 1];
-      } else {
-        now_url = now_url + "&" + i + "=" + boxes[i - 1];
-      }
-    }
-  }
-    if (boxes[9] == "") {
-      now_url = now_url + "&add=close";
-    } else {
-      now_url = now_url + "&add=open";
-    }
-  console.log(boxes);
-  navigator.clipboard.writeText(now_url);
-  console.log(now_url);
-  document.getElementById("copy").innerHTML = "コピーしました！"
 };
 
 function skillreset() {
@@ -97,46 +62,3 @@ function appear_bar() {
     document.getElementById("box10").src = "./pic/question.png";
 };
 }
-
-function even(array) {
-  const result = [];
-
-  array.forEach((element, index) => {
-    if (index % 2 === 0) {
-      result.push(element);
-    }
-  });
-
-  return result;
-}
-
-function odd(array) {
-  const result = [];
-
-  array.forEach((element, index) => {
-    if (index % 2 !== 0) {
-      result.push(element);
-    }
-  });
-
-  return result;
-}
-
-var params = location.href.split("?");
-if (params.length > 1) {
-  let X = params[1].split(/&|=/);
-  let Y = even(X);
-  let Z = odd(X);
-  let Ylast = Y.pop();
-  let Zlast = Z.pop();
-  let length = Y.length;
-
-  for (let i = 0; i < length; i++) {
-    selected_box = "box" + String(Number(Y[i]));
-    set(Z[i]);
-    console.log(Z[i]);
-  };
-  if (Zlast == "open") {
-    document.getElementById('addskill').style.display = "";
-  }
-};

@@ -63,12 +63,13 @@ h1:after {
   top: 0px;
   height: 90vh;
   display:flex;
-  padding: 0 2vw;
+  padding: 50px 2vw;
   flex-grow: 0;
 }
 
 .canvas_box {
-  padding-top: 18px;
+  margin-top: -10px;
+  padding: 0;
 }
 
 hr.space {
@@ -97,21 +98,6 @@ hr.space {
 
 .box{
   width:50px;
-}
-
-#super {
-  position: absolute;
-  top: 63px;
-}
-
-#box10{
-position:absolute;
-top:0px;
-}
-
-#box10{
-position:absolute;
-top:0px;
 }
 
 summary{
