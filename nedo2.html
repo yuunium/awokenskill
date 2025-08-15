@@ -12,28 +12,29 @@
   <meta name="twitter:site" content="@yuunium" />
   <meta property="og:locale" content="ja_JP" />
   <title>覚醒スキルサムネ用ツール3</title>
-  <link rel="stylesheet" href="./nedo2.css">
+  <link rel="stylesheet" href="./css/nedo2.css">
   <script src="./jquery-3.6.0.min.js"></script>
 </head>
+
 <body id="body">
 
   <div class="palette">
 
     <h1>覚醒スキルサムネ用ツール3</h1>
-        <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
-        <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
-        <a style="display: none;" id="downloadImage" href=""></a>
-        <img style="display: none;" id="displayImage"></img>
+    <button class="dl_btn" onclick="downloadPngFile()">ダウンロード<br>(ファイル)</button>
+    <button class="dl_btn" onclick="downloadPngDisplay()">ダウンロード<br>(画像表示)</button>
+    <a style="display: none;" id="downloadImage" href=""></a>
+    <img style="display: none;" id="displayImage"></img>
     <hr class="space">
     <div class="btn">
-    <button onclick="skillreset()">覚醒リセット</button>
+      <button onclick="skillreset()">覚醒リセット</button>
     </div>
     <hr class="space">
-    
+
     <div class="InnerPalette" oncontextmenu="return false;" onselectstart="return false;" onmousedown="return false;">
     </div>
     <script>$('div.InnerPalette').load('./palette.html'); </script>
-    
+
     <hr class="space">
     <p>ご意見、ご要望は、当サイト作成者ゆうにうむtwitterのDM、もしくはツイートのリプ欄へ</p>
     <a href="https://x.com/yuunium">ゆうにうむ(@yuunium)</a>
@@ -44,7 +45,7 @@
     <p style="height:100px;"></p>
   </div>
 
-  
+
   <div class="canvas_back"></div>
 
   <div id="canvas" class="canvas" oncontextmenu="return false;" onselectstart="return false;"
