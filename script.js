@@ -9,19 +9,15 @@ function box(a) {
 let boxes = ["", "", "", "", "", "", "", "", "", ""];
 function set(a) {
   document.getElementById(selected_box).src = './pic/' + a + '.png';
-  let parameter_number = selected_box.charAt(selected_box.length - 1);
-  if(parameter_number == 0){
-    parameter_number = 10;
-  };
+  let parameter_number = Number(selected_box.replace("box", ""));
   boxes[parameter_number - 1] = a;
 
-
-  let will_box_number = Number(selected_box.slice(-1)) + 1;
+  let will_box_number = parameter_number + 1;
   let will_box = "box" + String(will_box_number);
-  console.log(will_box_number);
+  console.log(will_box);
 
   let will_src = document.getElementById(will_box).src;
-  if (will_src == './pic/space.png') {
+  if (will_src == 'https://yuunium.github.io/awokenskill/pic/space.png') {
     if (will_box_number < 11) {
       selected_box = will_box;
       box(selected_box);
