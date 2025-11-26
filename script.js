@@ -1,10 +1,7 @@
 var selected_box = "box1";
 function box(a) {
-
     document.getElementById(a).src = './pic/selected.png';
     selected_box = a;
-
-  
 };
 
 
@@ -19,13 +16,14 @@ function set(a) {
   boxes[parameter_number - 1] = a;
 
 
-  let will_box_number = Number(selected_box.slice(-1))+1;
+  let will_box_number = Number(selected_box.slice(-1)) + 1;
+  let will_box = "box" + String(will_box_number);
   console.log(will_box_number);
 
-  let will_change = document.getElementById().src;
-  if (will_change == './pic/space.png') {
+  let will_src = document.getElementById(will_box).src;
+  if (will_src == './pic/space.png') {
     if (will_box_number < 11) {
-      selected_box = "box" + String(will_box_number);
+      selected_box = will_box;
       box(selected_box);
     }
   };
