@@ -14,7 +14,8 @@ function set(a) {
     parameter_number = 10;
   };
   boxes[parameter_number - 1] = a;
-  selected_box = "";
+  let selected_box_number = selected_box.slice(-1);
+  box('box' + selected_box_number + 1);
 };
 
 function downloadPngFile() {
