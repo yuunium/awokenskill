@@ -18,10 +18,8 @@ function set(a) {
 
   let will_src = document.getElementById(will_box).src;
   if (will_src == 'https://yuunium.github.io/awokenskill/pic/space.png') {
-    if (will_box_number < 11) {
       selected_box = will_box;
       box(selected_box);
-    }
   };
 };
 
