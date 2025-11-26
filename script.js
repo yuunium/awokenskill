@@ -1,4 +1,4 @@
-var selected_box = "";
+var selected_box = "box1";
 function box(a) {
   document.getElementById(a).src = './pic/selected.png';
   selected_box = a;
