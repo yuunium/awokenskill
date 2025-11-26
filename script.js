@@ -1,7 +1,10 @@
 var selected_box = "box1";
 function box(a) {
-  document.getElementById(a).src = './pic/selected.png';
-  selected_box = a;
+
+    document.getElementById(a).src = './pic/selected.png';
+    selected_box = a;
+
+  
 };
 
 
@@ -14,8 +17,18 @@ function set(a) {
     parameter_number = 10;
   };
   boxes[parameter_number - 1] = a;
-  let selected_box_number = selected_box.slice(-1);
-  box('box' + selected_box_number + 1);
+
+
+  let will_box_number = Number(selected_box.slice(-1))+1;
+  console.log(will_box_number);
+
+  let will_change = document.getElementById().src;
+  if (will_change == './pic/space.png') {
+    if (will_box_number < 11) {
+      selected_box = "box" + String(will_box_number);
+      box(selected_box);
+    }
+  };
 };
 
 function downloadPngFile() {
