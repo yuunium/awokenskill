@@ -1,0 +1,41 @@
+.link-page .palette {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  padding: 0 clamp(12px, 3vw, 20px) 24px;
+}
+
+.link-page h1 {
+  padding: 1.25rem 0;
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  overflow-wrap: anywhere;
+}
+
+.link-page .InnerPalette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 50px);
+  gap: 8px;
+  align-items: start;
+}
+
+.link-page .InnerPalette > p {
+  grid-column: 1 / -1;
+  margin: 1rem 0 0.25rem;
+  font-weight: bold;
+}
+
+.link-page .InnerPalette > img {
+  display: block;
+  width: 100%;
+  max-width: 64px;
+  height: auto;
+  justify-self: center;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .link-page .InnerPalette {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 6px;
+  }
+}
